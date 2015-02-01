@@ -11,7 +11,36 @@ html(lang="en")
             .row
                 .col-xs-12.talk-list
                     h2 Latest talks
-                    p talk list
+                    each talk in talks
+                        .row.talk
+                            .col-xs-1.author
+                                a(href="profile/"+talk.author.username)
+                                    img.avatar.img-responsive.img-circle(src=talk.author.avatar)
+                            .col-xs-1.votes
+                                button.btn.btn-primary(type="button")
+                                    i.glyphicon.glyphicon-chevron-up
+                                    span= talk.votes
+                            .col-xs-8.content
+                                h4
+                                    a(href="/talk/play/"+talk._id)= talk.title
+                                p= talk.description
+                                .tags
+                                    span.label.label-default Welcome
+                                    span.label.label-default Updates
+                                    span.label.label-default July
+                            .col-xs-2.info
+                                .counter.counter_cmnt
+                                    a(href="/talk/"+talk._id)
+                                        i.glyphicon.glyphicon-comment
+                                        span 000
+                                .counter.counter_ply
+                                    a(href="/talk/play/"+talk._id)
+                                        i.glyphicon.glyphicon-play
+                                        span= talk.views
+                                .counter.counter_like
+                                    a(href="/talk/like/"+talk._id)
+                                        i.glyphicon.glyphicon-heart
+                                        span= talk.likes
         .container
             .row
                 .col-xs-12.talk-list
