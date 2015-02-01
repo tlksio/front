@@ -39,7 +39,8 @@ nav.navbar.navbar-default
                 else
                     li
                         a(href='/login') Login
-                li
-                    a(href='/add')
-                        i.fa.fa-bolt
+                if user
+                    li
+                        a(href='/add')
+                            i.fa.fa-bolt
 
