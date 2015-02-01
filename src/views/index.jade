@@ -1,0 +1,21 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="utf-8")
+        title techtalks.io
+        include ./partials/css.jade
+        link(rel="shortcut icon", href="/img/favicon.png")
+    body
+        include ./partials/header.jade
+        .container
+            .row
+                .col-xs-12.talk-list
+                    h2 Latest talks
+                    p talk list
+        .container
+            .row
+                .col-xs-12.talk-list
+                    h2 Popular talks
+                    p talk list
+        include ./partials/footer.jade
+        include ./partials/js.jade

@@ -1,0 +1,15 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="utf-8")
+        title techtalks.io
+        include ./partials/css.jade
+    body
+        include ./partials/header.jade
+        .container
+            .row
+                .col-xs-12
+                    h1 Login
+                    a.btn.btn-primary.btn-lg.btn-block(href="/auth/twitter", type="button") Login with Twitter
+        include ./partials/footer.jade
+        include ./partials/js.jade

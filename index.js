@@ -7,7 +7,6 @@ var servestatic = require('serve-static');
 var config = require('./config.json');
 var routes = require('./lib/routes');
 
-
 var app = express();
 
 app.use(logger({ path: "./log/app.log" }));
@@ -24,6 +23,20 @@ app.use(session({
 }));
 
 app.get('/', routes.index);
+
+app.get('/privacy', routes.privacy);
+app.get('/terms', routes.terms);
+app.get('/about', routes.about);
+app.get('/faq', routes.faq);
+
+app.get('/login', routes.login);
+app.get('/logout', routes.authLogout);
+app.get('/auth/twitter', routes.authTwitter);
+app.get('/auth/twitter/callback', routes.authTwitterCallback);
+
+app.get('/add', routes.add);
+app.get('/profile', routes.profile);
+app.get('/settings', routes.settings);
 
 var server = app.listen(config.port, function () {
     var host = server.address().address;
