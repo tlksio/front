@@ -1,5 +1,0 @@
-{
-    "port": 8081,
-    "twitter_callback_url": "http://localhost:8081/auth/twitter/callback",
-    "mongodb": "mongodb://dbuser:dbpass@ds043180.mongolab.com:43180/techtalks"
-}
