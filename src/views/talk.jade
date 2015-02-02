@@ -1,0 +1,31 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="utf-8")
+        title techtalks.io
+        include ./partials/css.jade
+    body
+        include ./partials/header.jade
+        .container
+            .row
+                .col-xs-12.talk-view
+                    h2= talk.title
+                    .embed-responsive.embed-responsive-16by9
+                        iframe.embed-responsive-item(src="https://www.youtube.com/embed/"+talk.code)
+                    .row
+                        .col-xs-6
+                            p= talk.description
+                        .col-xs-6.info
+                            .votes
+                                span Votes:
+                                span= talk.votes
+                            .views
+                                span Views:
+                                span= talk.views
+                            .likes
+                                span Likes:
+                                span= talk.likes
+
+
+        include ./partials/footer.jade
+        include ./partials/js.jade
