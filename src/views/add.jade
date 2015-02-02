@@ -1,11 +1,27 @@
 doctype html
 html(lang="en")
-	head
-		meta(charset="utf-8")
-		title techtalks.io
-		include ./partials/css.jade
-	body
-		include ./partials/header.jade
-		p add
-		include ./partials/footer.jade
-		include ./partials/js.jade
+    head
+        meta(charset="utf-8")
+        title techtalks.io
+        include ./partials/css.jade
+    body
+        include ./partials/header.jade
+        .container
+            .row
+                .col-xs-12.add-form
+                    h2 Add new talk
+                    form(method="post", action="/add")
+                        .form-group
+                            label(for="code") Youtube Video Code
+                            input.form-control(type="text", name="code", id="code", placeholder="Youtube video code")
+                        .form-group
+                            label(for="title") Title
+                            input.form-control(type="text", name="title", id="title", placeholder="Title")
+                        .form-group
+                            label(for="description") Description
+                            input.form-control(type="text", name="title", id="title", placeholder="Description")
+                        button.btn.btn-default(type="submit") Submit
+
+
+        include ./partials/footer.jade
+        include ./partials/js.jade
