@@ -3,6 +3,7 @@ var session = require('express-session');
 var logger = require('express-logger');
 var favicon = require('serve-favicon');
 var servestatic = require('serve-static');
+var bodyparser = require('body-parser');
 
 var config = require('./config.json');
 var routes = require('./lib/routes');
@@ -15,7 +16,8 @@ app.use(servestatic(__dirname + '/public'));
 
 app.set('view engine', 'jade');
 app.set('views', __dirname + '/src/views');
-
+app.use( bodyparser.json() );
+app.use(bodyparser.urlencoded({ extended: true }));
 app.use(session({
     secret: 'keyboard cat',
     resave: false,
@@ -35,6 +37,7 @@ app.get('/auth/twitter', routes.authTwitter);
 app.get('/auth/twitter/callback', routes.authTwitterCallback);
 
 app.get('/add', routes.add);
+app.post('/add', routes.save);
 app.get('/profile', routes.profile);
 app.get('/settings', routes.settings);
 

@@ -1,0 +1,19 @@
+.talk-list .talk {
+  margin-bottom: 25px;
+}
+.talk-list .talk h3 {
+  margin-top: 0;
+}
+.talk-list .talk .info i {
+  padding-right: 10px;
+}
+.talk-list .talk .tags {
+  display: inline;
+}
+.talk-list .talk .tags .tag {
+  margin-right: 5px;
+  font-weight: normal;
+}
+footer {
+  margin-bottom: 25px;
+}

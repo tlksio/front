@@ -1,11 +1,29 @@
 doctype html
 html(lang="en")
-	head
-		meta(charset="utf-8")
-		title techtalks.io
-		include ./partials/css.jade
-	body
-		include ./partials/header.jade
-		p public profile
-		include ./partials/footer.jade
-		include ./partials/js.jade
+    head
+        meta(charset="utf-8")
+        title techtalks.io
+        include ./partials/css.jade
+    body
+        include ./partials/header.jade
+        .container
+            .row
+                .col-xs-3
+                    img.img-responsive.img-circle(src=profile.avatar)
+                .col-xs-9
+                    h1 @
+                        span= profile.username
+            .row
+                .col-xs-12
+                    ul.nav.nav-tabs
+                        li.active(role="presentation")
+                            a(href="#") Upvoted
+                        li(role="presentation")
+                            a(href="#") Collections
+                        li(role="followers")
+                            a(href="#") Followers
+                        li(role="following")
+                            a(href="#") Following
+
+        include ./partials/footer.jade
+        include ./partials/js.jade

@@ -7,7 +7,9 @@ html(lang="en")
         link(rel="shortcut icon", href="/img/favicon.png")
     body
         include ./partials/header.jade
-        .container
+
+        //- Latest talks
+        .container.latest-talks
             .row
                 .col-xs-12.talk-list
                     h2 Latest talks
@@ -21,13 +23,11 @@ html(lang="en")
                                     i.glyphicon.glyphicon-chevron-up
                                     span= talk.votes
                             .col-xs-8.content
-                                h4
-                                    a(href="/talk/play/"+talk._id)= talk.title
+                                h3: a(href="/talk/play/"+talk._id)= talk.title
                                 p= talk.description
                                 .tags
-                                    span.label.label-default Welcome
-                                    span.label.label-default Updates
-                                    span.label.label-default July
+                                    each tag in talk.tags
+                                        div.label.label-default.tag= tag
                             .col-xs-2.info
                                 .counter.counter_cmnt
                                     a(href="/talk/"+talk._id)
@@ -41,10 +41,12 @@ html(lang="en")
                                     a(href="/talk/like/"+talk._id)
                                         i.glyphicon.glyphicon-heart
                                         span= talk.likes
+        //- Popular talks
         .container
             .row
                 .col-xs-12.talk-list
                     h2 Popular talks
                     p talk list
+
         include ./partials/footer.jade
         include ./partials/js.jade
