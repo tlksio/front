@@ -2,16 +2,17 @@
    .col-xs-2.thumb
       a(href="talk/play/"+talk.id)
          img.img-responsive.img-circle.thumbnail(src="http://img.youtube.com/vi/"+talk.code+"/0.jpg")
-   .col-xs-8.content
+   .col-xs-9.content
       h3: a(href="/talk/"+talk.id)= talk.title
       p.description= talk.description
       .tags
          each tag in talk.tags
             a.label.label-default.tag(href="/tag/"+tag)= tag
-   .col-xs-2.info
+   .col-xs-1.info
       .votes
          button.btn.btn-primary(type="button")
             i.glyphicon.glyphicon-chevron-up
+            br
             span= talk.votes
       .stats
          .counter.counter_cmnt

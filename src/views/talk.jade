@@ -27,8 +27,13 @@ html(lang="en")
                                 .counter.counter_favorite
                                     i.glyphicon.glyphicon-heart
                                     span= talk.likes
+                    .row
+                        .col-xs-12.tags
+                            each tag in talk.tags
+                                a.label.label-default.tag(href="/tag/"+tag)= tag
                     hr
                     include ./partials/talk.comments.jade
+                            .tags
                     h3 Related talks
                     hr
                     p related talks

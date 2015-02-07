@@ -6,6 +6,23 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Oswald', sans-serif;
 }
 
+.talk-view {
+    .tags {
+        display: inline;
+        padding-top: 25px;
+        .tag {
+            font-size: 1.25rem;
+            background-color: #ccc;
+            color: #666;
+            margin-right: 5px;
+            font-weight: normal;
+        }
+        .tag:hover {
+            color: #333;
+        }
+    }
+}
+
 .talk-list {
     .talk {
         margin: 35px 0;
@@ -20,8 +37,11 @@ h1, h2, h3, h4, h5, h6 {
             font-size: 1.45rem;
         }
         .info {
-            i {
-                padding-right: 10px;
+            padding: 0;
+            .votes {
+                button {
+                    width: 100%;
+                }
             }
         }
         .tags {
