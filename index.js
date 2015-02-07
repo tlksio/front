@@ -49,6 +49,7 @@ app.get('/tag/:tag', routes.tag);
 app.get('/profile/:username', routes.publicProfile);
 
 var server = app.listen(config.port, function () {
+    "use strict";
     var host = server.address().address;
     var port = server.address().port;
     console.log('techtalks.io front listening at http://%s:%s', host, port);
