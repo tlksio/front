@@ -36,7 +36,10 @@ html(lang="en")
                             .tags
                     h3 Related talks
                     hr
-                    p related talks
+                    each talk in related
+                        include ./partials/talk-list.item.jade
+                        hr
 
         include ./partials/footer.jade
         include ./partials/js.jade
+        include ./partials/google.analytics.jade
