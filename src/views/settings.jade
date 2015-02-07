@@ -6,6 +6,17 @@ html(lang="en")
 		include ./partials/css.jade
 	body
 		include ./partials/header.jade
-		p settings
+		.container
+			.row
+				.col-xs-12
+					h1 Settings
+					hr
+					form(method="post", action="/settings")
+						input.form-control(type="hidden", name="id", id="id", value= user.user_id)
+						.row
+							.col-xs-6.text-left
+								a.btn.btn-danger(href="/") Cancel
+							.col-xs-6.text-right
+								input.btn.btn-primary(type="submit", value="Save settings")
 		include ./partials/footer.jade
 		include ./partials/js.jade

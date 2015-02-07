@@ -6,6 +6,23 @@ html(lang="en")
 		include ./partials/css.jade
 	body
 		include ./partials/header.jade
-		p profile
+		.container
+			.row
+				.col-xs-12
+					h1 Profile
+					hr
+					form(method="post", action="/profile")
+						input.form-control(type="hidden", name="id", id="id", value= user.user_id)
+						.form-group
+							label(for="username") Username
+							input.form-control(type="text", name="username", id="username", value= user.screen_name)
+						.form-group
+							label(for="avatar") Avatar
+							input.form-control(type="text", name="avatar", id="avatar", value= user.avatar)
+						.row
+							.col-xs-6.text-left
+								a.btn.btn-danger(href="/") Cancel
+							.col-xs-6.text-right
+								input.btn.btn-primary(type="submit", value="Save profile")
 		include ./partials/footer.jade
 		include ./partials/js.jade

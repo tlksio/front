@@ -2,22 +2,22 @@ var express = require('express');
 var session = require('express-session');
 var logger = require('express-logger');
 var favicon = require('serve-favicon');
-var servestatic = require('serve-static');
-var bodyparser = require('body-parser');
+var serveStatic = require('serve-static');
+var bodyParser = require('body-parser');
 
 var config = require('./config.json');
 var routes = require('./lib/routes');
 
 var app = express();
 
-app.use(logger({ path: "./log/app.log" }));
+app.use(logger({path: "./log/app.log"}));
 app.use(favicon(__dirname + '/public/img/favicon.png'));
-app.use(servestatic(__dirname + '/public'));
+app.use(serveStatic(__dirname + '/public'));
 
 app.set('view engine', 'jade');
 app.set('views', __dirname + '/src/views');
-app.use( bodyparser.json() );
-app.use(bodyparser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(session({
     secret: 'keyboard cat',
     resave: false,

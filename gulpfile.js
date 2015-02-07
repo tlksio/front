@@ -11,9 +11,10 @@ gulp.task('jshint', function () {
 gulp.task('less', function () {
     gulp.src('./src/less/**/*.less')
         .pipe(less({
-            paths: [ ]
+            paths: []
         }))
         .pipe(gulp.dest('./public/css'));
 });
 
-gulp.task('default', ['jshint', 'less'], function() {});
+gulp.task('default', ['jshint', 'less'], function () {
+});
