@@ -7,6 +7,9 @@ var bodyParser = require('body-parser');
 
 var config = require('./config.json');
 var routes = require('./lib/routes');
+var legalRoutes = require('./lib/routes/legal.js');
+var appRoutes = require('./lib/routes/app.js');
+var talkRoutes = require('./lib/routes/talk.js');
 
 var app = express();
 
@@ -26,10 +29,11 @@ app.use(session({
 
 app.get('/', routes.index);
 
-app.get('/privacy', routes.privacy);
-app.get('/terms', routes.terms);
-app.get('/about', routes.about);
-app.get('/faq', routes.faq);
+app.get('/privacy', legalRoutes.privacy);
+app.get('/terms', legalRoutes.terms);
+
+app.get('/about', appRoutes.about);
+app.get('/faq', appRoutes.faq);
 
 app.get('/login', routes.login);
 app.get('/logout', routes.authLogout);
@@ -41,8 +45,8 @@ app.post('/add', routes.save);
 app.get('/profile', routes.profile);
 app.get('/settings', routes.settings);
 
-app.get('/talk/play/:id', routes.play);
-app.get('/talk/:slug', routes.talk);
+app.get('/talk/play/:id', talkRoutes.play);
+app.get('/talk/:slug', talkRoutes.talk);
 
 app.get('/tag/:tag', routes.tag);
 
