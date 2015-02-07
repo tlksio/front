@@ -1,8 +1,26 @@
+body {
+  font-family: 'Droid Serif', serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Oswald', sans-serif;
+}
 .talk-list .talk {
-  margin-bottom: 25px;
+  margin: 35px 0;
 }
 .talk-list .talk h3 {
   margin-top: 0;
+  line-height: 3.2rem;
+}
+.talk-list .talk .thumb {
+  padding-left: 0;
+}
+.talk-list .talk .description {
+  font-size: 1.45rem;
 }
 .talk-list .talk .info i {
   padding-right: 10px;
@@ -11,8 +29,14 @@
   display: inline;
 }
 .talk-list .talk .tags .tag {
+  font-size: 1.25rem;
+  background-color: #ccc;
+  color: #666;
   margin-right: 5px;
   font-weight: normal;
+}
+.talk-list .talk .tags .tag:hover {
+  color: #333;
 }
 footer {
   margin-bottom: 25px;

@@ -10,22 +10,28 @@ html(lang="en")
             .row
                 .col-xs-12.talk-view
                     h2= talk.title
-                    .embed-responsive.embed-responsive-16by9
-                        iframe.embed-responsive-item(src="https://www.youtube.com/embed/"+talk.code)
+                    hr
                     .row
-                        .col-xs-6
+                        .col-xs-8
+                            .embed-responsive.embed-responsive-16by9
+                                iframe.embed-responsive-item(src="https://www.youtube.com/embed/"+talk.code)
+                        .col-xs-4
                             p= talk.description
-                        .col-xs-6.info
-                            .votes
-                                span Votes:
-                                span= talk.votes
-                            .views
-                                span Views:
-                                span= talk.views
-                            .likes
-                                span Likes:
-                                span= talk.likes
-
+                            .info
+                                .counter.counter_cmnt
+                                    i.glyphicon.glyphicon-comment
+                                    span 000
+                                .counter.counter_ply
+                                    i.glyphicon.glyphicon-play
+                                    span= talk.views
+                                .counter.counter_favorite
+                                    i.glyphicon.glyphicon-heart
+                                    span= talk.likes
+                    hr
+                    include ./partials/talk.comments.jade
+                    h3 Related talks
+                    hr
+                    p related talks
 
         include ./partials/footer.jade
         include ./partials/js.jade

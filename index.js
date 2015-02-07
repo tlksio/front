@@ -44,6 +44,8 @@ app.get('/settings', routes.settings);
 app.get('/talk/play/:id', routes.play);
 app.get('/talk/:id', routes.talk);
 
+app.get('/tag/:tag', routes.tag);
+
 app.get('/profile/:username', routes.publicProfile);
 
 var server = app.listen(config.port, function () {
