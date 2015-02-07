@@ -22,7 +22,11 @@ html(lang="en")
                         .form-group
                             label(for="description") Description
                             textarea.form-control(rows="3", name="description", id="description", placeholder="Description")
-                        button.btn.btn-default(type="submit") Submit
+                        .form-group
+                            label(for="tags") Tags
+                            input.form-control(type="text", name="tags", id="tags", placeholder="tag1, tag2, ...")
+                            
+                        button.btn.btn-primary(type="submit") Submit
 
 
         include ./partials/footer.jade
