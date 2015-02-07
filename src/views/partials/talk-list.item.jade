@@ -3,7 +3,7 @@
       a(href="talk/play/"+talk.id)
          img.img-responsive.img-circle.thumbnail(src="http://img.youtube.com/vi/"+talk.code+"/0.jpg")
    .col-xs-9.content
-      h3: a(href="/talk/"+talk.id)= talk.title
+      h3: a(href="/talk/"+talk.slug)= talk.title
       p.description= talk.description
       .tags
          each tag in talk.tags
@@ -13,17 +13,17 @@
          button.btn.btn-primary(type="button")
             i.glyphicon.glyphicon-chevron-up
             br
-            span= talk.votes
+            span= talk.voteCount
       .stats
          .counter.counter_cmnt
-            a(href="/talk/"+talk.id)
+            a(href="/talk/"+talk.slug)
                i.glyphicon.glyphicon-comment
                span 000
          .counter.counter_ply
             a(href="/talk/play/"+talk.id)
                i.glyphicon.glyphicon-play
-               span= talk.views
+               span= talk.viewCount
          .counter.counter_favorite
             a(href="/talk/favorite/"+talk.id)
                i.glyphicon.glyphicon-heart
-               span= talk.likes
+               span= talk.favoriteCount

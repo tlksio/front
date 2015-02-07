@@ -42,7 +42,7 @@ app.get('/profile', routes.profile);
 app.get('/settings', routes.settings);
 
 app.get('/talk/play/:id', routes.play);
-app.get('/talk/:id', routes.talk);
+app.get('/talk/:slug', routes.talk);
 
 app.get('/tag/:tag', routes.tag);
 
