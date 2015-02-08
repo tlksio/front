@@ -3,11 +3,11 @@ html(lang="en")
     head
         meta(charset="utf-8")
         title techtalks.io
-        include ./partials/google.webmastertools.jade
-        include ./partials/css.jade
+        include partials/google.webmastertools.jade
+        include partials/main.css.jade
         link(rel="shortcut icon", href="/img/favicon.png")
     body
-        include ./partials/header.jade
+        include partials/header.jade
         .container
             h1 Settings
             hr
@@ -41,6 +41,6 @@ html(lang="en")
                             .col-xs-6.text-right
                                 input.btn.btn-primary(type="submit", value="Save profile")
                 .col-xs-4
-        include ./partials/footer.jade
-        include ./partials/js.jade
-        include ./partials/google.analytics.jade
+        include partials/footer.jade
+        include partials/js.jade
+        include partials/google.analytics.jade

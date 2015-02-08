@@ -3,16 +3,16 @@ html(lang="en")
     head
         meta(charset="utf-8")
         title techtalks.io
-        include ./partials/google.webmastertools.jade
-        include ./partials/css.jade
+        include partials/google.webmastertools.jade
+        include partials/main.css.jade
         link(rel="shortcut icon", href="/img/favicon.png")
     body
-        include ./partials/header.jade
+        include partials/header.jade
         .container
             .row
                 .col-xs-12
                     h1 Login
                     a.btn.btn-primary.btn-lg.btn-block(href="/auth/twitter", type="button") Login with Twitter
-        include ./partials/footer.jade
-        include ./partials/js.jade
-        include ./partials/google.analytics.jade
+        include partials/footer.jade
+        include partials/js.jade
+        include partials/google.analytics.jade

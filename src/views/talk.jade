@@ -3,9 +3,11 @@ html(lang="en")
     head
         meta(charset="utf-8")
         title techtalks.io
-        include ./partials/css.jade
+        include partials/google.webmastertools.jade
+        include partials/main.css.jade
+        link(rel="shortcut icon", href="/img/favicon.png")
     body
-        include ./partials/header.jade
+        include partials/header.jade
         .container
             .row
                 .col-xs-12.talk-view
@@ -29,8 +31,8 @@ html(lang="en")
                                     span= talk.likes
                     .row
                         .col-xs-12.tags
-                        each tag in talk.tags
-                            a.label.label-default.tag(href="/tag/" + tag)= tag
+                            each tag in talk.tags
+                                a.label.label-default.tag(href="/tag/" + tag)= tag
                     hr
                     include ./partials/talk.comments.jade
                         .tags
@@ -40,6 +42,6 @@ html(lang="en")
                         include ./partials/talk-list.item.jade
                         hr
 
-        include ./partials/footer.jade
-        include ./partials/js.jade
-        include ./partials/google.analytics.jade
+        include partials/footer.jade
+        include partials/js.jade
+        include partials/google.analytics.jade

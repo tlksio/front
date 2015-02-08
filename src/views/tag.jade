@@ -3,12 +3,12 @@ html(lang="en")
     head
         meta(charset="utf-8")
         title techtalks.io
-        include ./partials/google.webmastertools.jade
-        include ./partials/css.jade
+        include partials/google.webmastertools.jade
+        include partials/main.css.jade
         link(rel="shortcut icon", href="/img/favicon.png")
         link(rel="alternate", type="application/rss+xml", href="http://vps129914.ovh.net/rss/tag/" + tag, title="RSS 2.0 Latest Talks")
     body
-        include ./partials/header.jade
+        include partials/header.jade
 
         //- Latest talks
         .container.latest-talks
@@ -21,6 +21,6 @@ html(lang="en")
                         include ./partials/talk-list.item.jade
                         hr
 
-        include ./partials/footer.jade
-        include ./partials/js.jade
-        include ./partials/google.analytics.jade
+        include partials/footer.jade
+        include partials/js.jade
+        include partials/google.analytics.jade

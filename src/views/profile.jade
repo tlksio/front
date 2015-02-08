@@ -3,11 +3,11 @@ html(lang="en")
     head
         meta(charset="utf-8")
         title techtalks.io
-        include ./partials/google.webmastertools.jade
-        include ./partials/css.jade
+        include partials/google.webmastertools.jade
+        include partials/main.css.jade
         link(rel="shortcut icon", href="/img/favicon.png")
     body
-        include ./partials/header.jade
+        include partials/header.jade
         .container
             .row
                 .col-xs-3
@@ -30,9 +30,9 @@ html(lang="en")
                             a(href="#") Following
             .row
                 .col-xs-12.talk-list
-                for talk in posted
-                    include ./partials/talk-list.item.jade
+                    for talk in posted
+                        include ./partials/talk-list.item.jade
 
-        include ./partials/footer.jade
-        include ./partials/js.jade
-        include ./partials/google.analytics.jade
+        include partials/footer.jade
+        include partials/js.jade
+        include partials/google.analytics.jade
