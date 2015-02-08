@@ -9,6 +9,9 @@ h5,
 h6 {
   font-family: 'Oswald', sans-serif;
 }
+.activity-list .event {
+  padding: 20px 0;
+}
 .talk-view .tags {
   display: inline;
   padding-top: 25px;

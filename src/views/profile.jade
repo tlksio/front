@@ -18,15 +18,21 @@ html(lang="en")
             .row
                 .col-xs-12
                     ul.nav.nav-tabs
-                        li.active(role="presentation")
+                        li.active(role="posted")
+                            a(href="#") Posted
+                        li(role="upvoted")
                             a(href="#") Upvoted
-                        li(role="presentation")
+                        li(role="collections")
                             a(href="#") Collections
                         li(role="followers")
                             a(href="#") Followers
                         li(role="following")
                             a(href="#") Following
-                                include ./partials/footer.jade
+            .row
+                .col-xs-12.talk-list
+                    for talk in posted
+                        include ./partials/talk-list.item.jade
+
+        include ./partials/footer.jade
         include ./partials/js.jade
         include ./partials/google.analytics.jade
-                            

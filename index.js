@@ -30,6 +30,7 @@ app.use(session({
 }));
 
 app.get('/', routes.index);
+app.get('/activity', routes.activity);
 
 app.get('/privacy', legalRoutes.privacy);
 app.get('/terms', legalRoutes.terms);

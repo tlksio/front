@@ -1,0 +1,23 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="utf-8")
+        title techtalks.io
+        include ./partials/google.webmastertools.jade
+        include ./partials/css.jade
+        link(rel="shortcut icon", href="/img/favicon.png")
+    body
+        include ./partials/header.jade
+
+        //- Activity
+        .container.latest-activity
+            .row
+                .col-xs-12.activity-list
+                    h2 Activity
+                    hr
+                    each talk in activity
+                        include ./partials/activity-list.item.jade
+
+        include ./partials/footer.jade
+        include ./partials/js.jade
+        include ./partials/google.analytics.jade

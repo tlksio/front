@@ -1,0 +1,10 @@
+.event
+   i.fa.fa-plus-square
+   = ' '
+   a(href="/profile/"+talk.author.username)
+      span @
+      span= talk.author.username
+   = ' '
+   span posted
+   = ' '
+   a(href="/talk/"+talk.slug)= talk.title
