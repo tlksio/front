@@ -43,8 +43,9 @@ app.get('/auth/twitter/callback', routes.authTwitterCallback);
 app.get('/add', routes.add);
 app.post('/add', routes.save);
 
-app.get('/profile/:username', routes.profile);
-app.get('/profile/:username/settings', routes.settings);
+app.get('/profile/:username', userRoutes.profile);
+app.get('/profile/:username/settings', userRoutes.settings);
+app.post('/profile/:username/settings', userRoutes.settingsSave);
 
 app.get('/talk/play/:id', talkRoutes.play);
 app.get('/talk/:slug', talkRoutes.talk);
