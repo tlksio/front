@@ -1,9 +1,16 @@
 var gulp = require('gulp');
 var jshint = require('gulp-jshint');
+var csslint = require('gulp-csslint');
 var less = require('gulp-less');
 
+gulp.task('csslint', function () {
+    gulp.src('./public/css/**/*.css')
+        .pipe(csslint())
+        .pipe(csslint.reporter());
+});
+
 gulp.task('jshint', function () {
-    gulp.src('*.js')
+    gulp.src('./lib/*.js')
         .pipe(jshint())
         .pipe(jshint.reporter('default'));
 });
@@ -16,5 +23,5 @@ gulp.task('less', function () {
         .pipe(gulp.dest('./public/css'));
 });
 
-gulp.task('default', ['jshint', 'less'], function () {
+gulp.task('default', ['jshint', 'less', 'csslint'], function () {
 });

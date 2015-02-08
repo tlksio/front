@@ -6,7 +6,7 @@
             img.img-responsive.img-circle.thumbnail(src="http://img.youtube.com/vi/" + talk.code + "/0.jpg")
     .col-xs-8.content
         //- Title
-        h3: a(href="/talk/" + talk.slug)= talk.title
+        h3.title: a(href="/talk/" + talk.slug)= talk.title
         //- Description
         p.description= talk.description
         //- Tags
