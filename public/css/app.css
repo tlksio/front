@@ -64,3 +64,6 @@ h6 {
 footer {
   margin-bottom: 25px;
 }
+footer .menu li {
+  line-height: 1.5em;
+}

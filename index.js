@@ -57,6 +57,7 @@ app.get('/tag/:tag', tagRoutes.tag);
 
 app.get('/rss/latest', rssRoutes.latest);
 app.get('/rss/popular', rssRoutes.popular);
+//app.get('/rss/tag/:tag', rssRoutes.tag);
 
 var server = app.listen(config.port, function () {
     "use strict";
