@@ -12,6 +12,7 @@ var appRoutes = require('./lib/routes/app.js');
 var talkRoutes = require('./lib/routes/talk.js');
 var userRoutes = require('./lib/routes/user.js');
 var tagRoutes = require('./lib/routes/tag.js');
+var rssRoutes = require('./lib/routes/rss.js');
 
 var app = express();
 
@@ -53,6 +54,9 @@ app.get('/talk/play/:id', talkRoutes.play);
 app.get('/talk/:slug', talkRoutes.talk);
 
 app.get('/tag/:tag', tagRoutes.tag);
+
+app.get('/rss/latest', rssRoutes.latest);
+app.get('/rss/popular', rssRoutes.popular);
 
 var server = app.listen(config.port, function () {
     "use strict";
