@@ -30,8 +30,8 @@ html(lang="en")
                             a(href="#") Following
             .row
                 .col-xs-12.talk-list
-                    for talk in posted
-                        include ./partials/talk-list.item.jade
+                for talk in posted
+                    include ./partials/talk-list.item.jade
 
         include ./partials/footer.jade
         include ./partials/js.jade

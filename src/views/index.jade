@@ -17,18 +17,18 @@ html(lang="en")
                 .col-xs-12.talk-list
                     h2 Latest talks
                     hr
-                    each talk in latest
-                        include ./partials/talk-list.item.jade
-                        hr
+                each talk in latest
+                    include ./partials/talk-list.item.jade
+                    hr
         //- Popular talks
         .container
             .row
                 .col-xs-12.talk-list
                     h2 Popular talks
                     hr
-                    each talk in popular
-                        include ./partials/talk-list.item.jade
-                        hr
+                each talk in popular
+                    include ./partials/talk-list.item.jade
+                    hr
 
         include ./partials/footer.jade
         include ./partials/js.jade

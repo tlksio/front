@@ -1,69 +1,86 @@
 body {
-  font-family: 'Droid Serif', serif;
+    font-family: 'Droid Serif', serif;
 }
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-family: 'Oswald', sans-serif;
+    font-family: 'Oswald', sans-serif;
 }
+
 .activity-list .event {
-  padding: 20px 0;
+    padding: 20px 0;
 }
+
 .talk-view .tags {
-  display: inline;
-  padding-top: 25px;
+    display: inline;
+    padding-top: 25px;
 }
+
 .talk-view .tags .tag {
-  font-size: 1.25rem;
-  background-color: #ccc;
-  color: #666;
-  margin-right: 5px;
-  font-weight: normal;
+    background-color: #ccc;
+    color: #666;
+    font-size: 1.25rem;
+    font-weight: normal;
+    margin-right: 5px;
 }
+
 .talk-view .tags .tag:hover {
-  color: #333;
+    color: #333;
 }
+
 .talk-list .talk {
-  margin: 35px 0;
+    margin: 35px 0;
 }
+
 .talk-list .talk h3 {
-  margin-top: 0;
-  line-height: 3.2rem;
+    line-height: 3.2rem;
+    margin-top: 0;
 }
+
 .talk-list .talk .thumb {
-  padding-left: 0;
+    padding-left: 0;
 }
+
 .talk-list .talk .description {
-  font-size: 1.45rem;
+    font-size: 1.45rem;
 }
+
 .talk-list .talk .info {
-  padding-right: 0;
+    padding-right: 0;
 }
+
 .talk-list .talk .info .votes button {
-  width: 100%;
+    width: 100%;
 }
+
 .talk-list .talk .rates i {
-  padding-right: 10px;
+    padding-right: 10px;
 }
+
 .talk-list .talk .tags {
-  display: inline;
+    display: inline;
 }
+
 .talk-list .talk .tags .tag {
-  font-size: 1.25rem;
-  background-color: #ccc;
-  color: #666;
-  margin-right: 5px;
-  font-weight: normal;
+    background-color: #ccc;
+    color: #666;
+    font-size: 1.25rem;
+    font-weight: normal;
+    margin-right: 5px;
 }
+
 .talk-list .talk .tags .tag:hover {
-  color: #333;
+    color: #333;
 }
+
 footer {
-  margin-bottom: 25px;
+    margin-bottom: 25px;
 }
+
 footer .menu li {
-  line-height: 1.5em;
+    line-height: 1.5em;
 }

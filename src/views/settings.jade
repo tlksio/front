@@ -13,7 +13,7 @@ html(lang="en")
             hr
             .row
                 .col-xs-8
-                    form.form-horizontal(method="post", action="/profile/"+user.username+"/settings")
+                    form.form-horizontal(method="post", action="/profile/" + user.username + "/settings")
                         input.form-control(type="hidden", name="id", id="id", value= user.id)
                         .form-group
                             .col-xs-2

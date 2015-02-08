@@ -14,7 +14,7 @@ html(lang="en")
                     .row
                         .col-xs-8
                             .embed-responsive.embed-responsive-16by9
-                                iframe.embed-responsive-item(src="https://www.youtube.com/embed/"+talk.code)
+                                iframe.embed-responsive-item(src="https://www.youtube.com/embed/" + talk.code)
                         .col-xs-4
                             p= talk.description
                             .info
@@ -29,16 +29,16 @@ html(lang="en")
                                     span= talk.likes
                     .row
                         .col-xs-12.tags
-                            each tag in talk.tags
-                                a.label.label-default.tag(href="/tag/"+tag)= tag
+                        each tag in talk.tags
+                            a.label.label-default.tag(href="/tag/" + tag)= tag
                     hr
                     include ./partials/talk.comments.jade
-                            .tags
+                        .tags
                     h3 Related talks
                     hr
-                    each talk in related
-                        include ./partials/talk-list.item.jade
-                        hr
+                each talk in related
+                    include ./partials/talk-list.item.jade
+                    hr
 
         include ./partials/footer.jade
         include ./partials/js.jade
