@@ -10,6 +10,7 @@ var routes = require('./lib/routes');
 var legalRoutes = require('./lib/routes/legal.js');
 var appRoutes = require('./lib/routes/app.js');
 var talkRoutes = require('./lib/routes/talk.js');
+var userRoutes = require('./lib/routes/user.js');
 
 var app = express();
 

@@ -13,18 +13,23 @@ html(lang="en")
             hr
             .row
                 .col-xs-8
-                    form.form-horizontal(method="post", action="/settings")
+                    form.form-horizontal(method="post", action="/profile/"+user.username+"/settings")
                         input.form-control(type="hidden", name="id", id="id", value= user.id)
                         .form-group
                             .col-xs-2
                                 label(for="username") Username
                             .col-xs-10
-                                input.form-control(type="text", name="username", id="username", value= user.username)
+                                p.form-control-static= user.username
                         .form-group
                             .col-xs-2
                                 label(for="avatar") Avatar
                             .col-xs-10
-                                input.form-control(type="text", name="avatar", id="avatar", value= user.avatar)
+                                p.form-control-static= user.avatar
+                        .form-group
+                            .col-xs-2
+                                label(for="email") Email
+                            .col-xs-10
+                                input.form-control(type="text", name="email", id="email", placeholder="email@example.com", value=user.email)
                         .form-group
                             .col-xs-2
                                 label(for="bio") Bio
