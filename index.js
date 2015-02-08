@@ -35,22 +35,21 @@ app.get('/terms', legalRoutes.terms);
 app.get('/about', appRoutes.about);
 app.get('/faq', appRoutes.faq);
 
-app.get('/login', routes.login);
-app.get('/logout', routes.authLogout);
+app.get('/auth/login', routes.login);
+app.get('/auth/logout', routes.authLogout);
 app.get('/auth/twitter', routes.authTwitter);
 app.get('/auth/twitter/callback', routes.authTwitterCallback);
 
 app.get('/add', routes.add);
 app.post('/add', routes.save);
-app.get('/profile', routes.profile);
-app.get('/settings', routes.settings);
+
+app.get('/profile/:username', routes.profile);
+app.get('/profile/:username/settings', routes.settings);
 
 app.get('/talk/play/:id', talkRoutes.play);
 app.get('/talk/:slug', talkRoutes.talk);
 
 app.get('/tag/:tag', routes.tag);
-
-app.get('/profile/:username', routes.publicProfile);
 
 var server = app.listen(config.port, function () {
     "use strict";

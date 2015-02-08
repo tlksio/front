@@ -27,18 +27,18 @@ nav.navbar.navbar-default
                     li
                         a(href='#', data-toggle='dropdown', role='button', aria-expanded='false')
                             span @
-                            span= user.screen_name
+                            span= user.username
                             span.caret
                         ul.dropdown-menu(role='menu')
                             li
-                                a(href='/profile') Profile
+                                a(href='/profile/'+user.username) Profile
                             li
-                                a(href='/settings') Settings
+                                a(href='/profile/'+user.username+'/settings') Settings
                             li
-                                a(href='/logout') Logout
+                                a(href='/auth/logout') Logout
                 else
                     li
-                        a(href='/login') Login
+                        a(href='/auth/login') Login
                 if user
                     li
                         a(href='/add')

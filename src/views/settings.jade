@@ -1,25 +1,41 @@
 doctype html
 html(lang="en")
-	head
-		meta(charset="utf-8")
-		title techtalks.io
-		include ./partials/google.webmastertools.jade
-		include ./partials/css.jade
-		link(rel="shortcut icon", href="/img/favicon.png")
-	body
-		include ./partials/header.jade
-		.container
-			.row
-				.col-xs-12
-					h1 Settings
-					hr
-					form(method="post", action="/settings")
-						input.form-control(type="hidden", name="id", id="id", value= user.user_id)
-						.row
-							.col-xs-6.text-left
-								a.btn.btn-danger(href="/") Cancel
-							.col-xs-6.text-right
-								input.btn.btn-primary(type="submit", value="Save settings")
-		include ./partials/footer.jade
-		include ./partials/js.jade
-		include ./partials/google.analytics.jade
+    head
+        meta(charset="utf-8")
+        title techtalks.io
+        include ./partials/google.webmastertools.jade
+        include ./partials/css.jade
+        link(rel="shortcut icon", href="/img/favicon.png")
+    body
+        include ./partials/header.jade
+        .container
+            h1 Settings
+            hr
+            .row
+                .col-xs-8
+                    form.form-horizontal(method="post", action="/settings")
+                        input.form-control(type="hidden", name="id", id="id", value= user.id)
+                        .form-group
+                            .col-xs-2
+                                label(for="username") Username
+                            .col-xs-10
+                                input.form-control(type="text", name="username", id="username", value= user.username)
+                        .form-group
+                            .col-xs-2
+                                label(for="avatar") Avatar
+                            .col-xs-10
+                                input.form-control(type="text", name="avatar", id="avatar", value= user.avatar)
+                        .form-group
+                            .col-xs-2
+                                label(for="bio") Bio
+                            .col-xs-10
+                                textarea.form-control(name="bio", id="bio")= user.bio
+                        .row
+                            .col-xs-6.text-left
+                                a.btn.btn-danger(href="/") Cancel
+                            .col-xs-6.text-right
+                                input.btn.btn-primary(type="submit", value="Save profile")
+                .col-xs-4
+        include ./partials/footer.jade
+        include ./partials/js.jade
+        include ./partials/google.analytics.jade

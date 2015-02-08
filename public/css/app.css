@@ -37,10 +37,13 @@ h6 {
   font-size: 1.45rem;
 }
 .talk-list .talk .info {
-  padding: 0;
+  padding-right: 0;
 }
 .talk-list .talk .info .votes button {
   width: 100%;
+}
+.talk-list .talk .rates i {
+  padding-right: 10px;
 }
 .talk-list .talk .tags {
   display: inline;

@@ -15,7 +15,10 @@ html(lang="en")
                     form(method="post", action="/add")
                         .form-group
                             label(for="code") Youtube Video Code
-                            input.form-control(type="text", name="code", id="code", placeholder="Youtube video code")
+                            .input-group
+                                .input-group-addon
+                                    i.fa.fa-youtube-square
+                                input.form-control(type="text", name="code", id="code", placeholder="Youtube video code")
                         .form-group
                             label(for="title") Title
                             input.form-control(type="text", name="title", id="title", placeholder="Title")

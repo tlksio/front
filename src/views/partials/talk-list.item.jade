@@ -1,19 +1,20 @@
+//- Talk
 .row.talk
    .col-xs-2.thumb
+      //- Thumbnail
       a(href="talk/play/"+talk.id)
          img.img-responsive.img-circle.thumbnail(src="http://img.youtube.com/vi/"+talk.code+"/0.jpg")
-   .col-xs-9.content
+   .col-xs-8.content
+      //- Title
       h3: a(href="/talk/"+talk.slug)= talk.title
+      //- Description
       p.description= talk.description
+      //- Tags
       .tags
          each tag in talk.tags
             a.label.label-default.tag(href="/tag/"+tag)= tag
-   .col-xs-1.info
-      .votes
-         button.btn.btn-primary(type="button")
-            i.glyphicon.glyphicon-chevron-up
-            br
-            span= talk.voteCount
+   //- Stats
+   .col-xs-1.rates
       .stats
          .counter.counter_cmnt
             a(href="/talk/"+talk.slug)
@@ -21,9 +22,16 @@
                span 000
          .counter.counter_ply
             a(href="/talk/play/"+talk.id)
-               i.glyphicon.glyphicon-play
+               i.fa.fa-youtube-play
                span= talk.viewCount
          .counter.counter_favorite
             a(href="/talk/favorite/"+talk.id)
                i.glyphicon.glyphicon-heart
                span= talk.favoriteCount
+   //- Vote
+   .col-xs-1.info
+      .votes
+         button.btn.btn-primary(type="button")
+            i.glyphicon.glyphicon-chevron-up
+            br
+            span= talk.voteCount
