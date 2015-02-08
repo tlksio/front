@@ -11,6 +11,7 @@ var legalRoutes = require('./lib/routes/legal.js');
 var appRoutes = require('./lib/routes/app.js');
 var talkRoutes = require('./lib/routes/talk.js');
 var userRoutes = require('./lib/routes/user.js');
+var tagRoutes = require('./lib/routes/tag.js');
 
 var app = express();
 
@@ -41,17 +42,16 @@ app.get('/auth/logout', routes.authLogout);
 app.get('/auth/twitter', routes.authTwitter);
 app.get('/auth/twitter/callback', routes.authTwitterCallback);
 
-app.get('/add', routes.add);
-app.post('/add', routes.save);
-
 app.get('/profile/:username', userRoutes.profile);
 app.get('/profile/:username/settings', userRoutes.settings);
 app.post('/profile/:username/settings', userRoutes.settingsSave);
 
+app.get('/talk/add', talkRoutes.add);
+app.post('/talk/add', talkRoutes.save);
 app.get('/talk/play/:id', talkRoutes.play);
 app.get('/talk/:slug', talkRoutes.talk);
 
-app.get('/tag/:tag', routes.tag);
+app.get('/tag/:tag', tagRoutes.tag);
 
 var server = app.listen(config.port, function () {
     "use strict";
