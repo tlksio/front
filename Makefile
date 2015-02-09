@@ -12,3 +12,8 @@ less:
 
 run: build
 	node .
+
+test:
+	./node_modules/.bin/mocha test/
+
+.PHONY: build dist-clean lint less run test
