@@ -1,0 +1,37 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="utf-8")
+        title tlks.io
+        include partials/google.webmastertools.jade
+        include partials/main.css.jade
+    body
+        include partials/header.jade
+        .container
+            .row
+                .col-xs-12.add-form
+                    h1 Add new talk
+                    hr
+                    form(method="post", action="/talk/add")
+                        .form-group
+                            label(for="code") Youtube Video Code
+                            .input-group
+                                .input-group-addon
+                                    i.fa.fa-youtube-square
+                                input.form-control(type="text", name="code", id="code", placeholder="Youtube video code")
+                        .form-group
+                            label(for="title") Title
+                            input.form-control(type="text", name="title", id="title", placeholder="Title")
+                        .form-group
+                            label(for="description") Description
+                            textarea.form-control(rows="3", name="description", id="description", placeholder="Description")
+                        .form-group
+                            label(for="tags") Tags
+                            input.form-control(type="text", name="tags", id="tags", placeholder="tag1, tag2, ...")
+
+                        button.btn.btn-primary(type="submit") Submit
+
+
+        include partials/footer.jade
+        include partials/main.js.jade
+        include partials/google.analytics.jade

@@ -1,0 +1,5 @@
+{
+    "port": 8081,
+    "twitter_callback_url": "http://host:port/auth/twitter/callback",
+    "mongodb": "mongodb://dbuser:dbpass@dbhost:dbport/dbname"
+}

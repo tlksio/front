@@ -1,0 +1,26 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="utf-8")
+        title tlks.io
+        include partials/google.webmastertools.jade
+        include partials/main.css.jade
+        link(rel="shortcut icon", href="/img/favicon.png")
+        link(rel="alternate", type="application/rss+xml", href="http://tlks.io/rss/tag/" + tag, title="RSS 2.0 Latest Talks")
+    body
+        include partials/header.jade
+
+        //- Latest talks
+        .container.latest-talks
+            .row
+                .col-xs-12.talk-list
+                    h2 Talks tagged as
+                        span= tag
+                    hr
+                    each talk in talks
+                        include ./partials/talk-list.item.jade
+                        hr
+
+        include partials/footer.jade
+        include partials/main.js.jade
+        include partials/google.analytics.jade

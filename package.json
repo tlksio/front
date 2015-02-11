@@ -1,0 +1,39 @@
+{
+  "name": "front",
+  "version": "0.0.1",
+  "description": "tlks.io front",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/moviewio/front.git"
+  },
+  "keywords": [
+    "tlks.io",
+    "front"
+  ],
+  "author": "Raül Pérez <repejota@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.11.0",
+    "express": "^4.11.1",
+    "express-logger": "0.0.3",
+    "express-session": "^1.10.1",
+    "feed": "^0.2.6",
+    "gulp-less": "^2.0.1",
+    "jade": "^1.9.1",
+    "mongodb": "^1.4.29",
+    "oauth": "^0.9.12",
+    "serve-favicon": "^2.2.0",
+    "serve-static": "^1.8.1",
+    "slug": "^0.8.0",
+    "uuid": "^2.0.1",
+    "xml": "^1.0.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.10",
+    "gulp-csslint": "^0.1.5",
+    "gulp-jshint": "^1.9.0",
+    "mocha": "^2.1.0"
+  }
+}

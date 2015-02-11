@@ -1,0 +1,47 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="utf-8")
+        title tlks.io
+        include partials/google.webmastertools.jade
+        include partials/main.css.jade
+        link(rel="shortcut icon", href="/img/favicon.png")
+    body
+        include partials/header.jade
+        .container
+            .row
+                .col-xs-12.talk-view
+                    h2= talk.title
+                    hr
+                    .row
+                        .col-xs-8
+                            .embed-responsive.embed-responsive-16by9
+                                iframe.embed-responsive-item(src="https://www.youtube.com/embed/" + talk.code)
+                        .col-xs-4
+                            p= talk.description
+                            .info
+                                .counter.counter_cmnt
+                                    i.glyphicon.glyphicon-comment
+                                    span 000
+                                .counter.counter_ply
+                                    i.glyphicon.glyphicon-play
+                                    span= talk.views
+                                .counter.counter_favorite
+                                    i.glyphicon.glyphicon-heart
+                                    span= talk.likes
+                    .row
+                        .col-xs-12.tags
+                            each tag in talk.tags
+                                a.label.label-default.tag(href="/tag/" + tag)= tag
+                    hr
+                    include ./partials/talk.comments.jade
+                        .tags
+                    h3 Related talks
+                    hr
+                    each talk in related
+                        include ./partials/talk-list.item.jade
+                        hr
+
+        include partials/footer.jade
+        include partials/main.js.jade
+        include partials/google.analytics.jade
