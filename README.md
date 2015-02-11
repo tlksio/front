@@ -1,4 +1,4 @@
-# techtalks.io
+# tlks.io
 
 * Introduction
 * Download
@@ -7,7 +7,7 @@
 
 ## Introduction
 
-This is the front-end project for techtalks.io
+This is the front-end project for tlks.io
 
 ## Download
 

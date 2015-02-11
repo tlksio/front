@@ -1,7 +1,7 @@
 {
   "name": "front",
   "version": "0.0.1",
-  "description": "techtalks.io front",
+  "description": "tlks.io front",
   "main": "index.js",
   "scripts": {},
   "repository": {
@@ -9,7 +9,7 @@
     "url": "https://github.com/moviewio/front.git"
   },
   "keywords": [
-    "techtalks.io",
+    "tlks.io",
     "front"
   ],
   "author": "Raül Pérez <repejota@gmail.com>",
