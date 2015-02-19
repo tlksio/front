@@ -22,6 +22,7 @@
     "feed": "^0.2.6",
     "gulp-less": "^2.0.1",
     "jade": "^1.9.1",
+    "libtlks": "git://github.com/tlksio/libtlks#develop",
     "mongodb": "^1.4.29",
     "oauth": "^0.9.12",
     "serve-favicon": "^2.2.0",
