@@ -11,6 +11,15 @@ html(lang="en")
     body
         include partials/header.jade
 
+        .container.search-form
+            .row
+                .col-xs-12.talk-list
+                    form(method="get", action="/search")
+                        .form-group
+                            label(for="q") Search
+                            input.form-control(type="search", name="q", id="q", placeholder="Search talks")
+                        button.btn.btn-default(type="submit") Submit
+
         //- Latest talks
         .container.latest-talks
             .row
