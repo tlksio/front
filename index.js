@@ -59,6 +59,8 @@ app.get('/rss/latest', rssRoutes.latest);
 app.get('/rss/popular', rssRoutes.popular);
 app.get('/rss/tag/:tag', rssRoutes.tag);
 
+app.get('/search', talkRoutes.search);
+
 var server = app.listen(config.port, function () {
     "use strict";
     var host = server.address().address;
