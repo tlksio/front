@@ -3,7 +3,9 @@
   "version": "0.0.1",
   "description": "tlks.io front",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "mocha"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/moviewio/front.git"
