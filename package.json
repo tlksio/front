@@ -25,6 +25,7 @@
     "libtlks": "git://github.com/tlksio/libtlks#develop",
     "mongodb": "^1.4.29",
     "oauth": "^0.9.12",
+    "request": "^2.53.0",
     "serve-favicon": "^2.2.0",
     "serve-static": "^1.8.1",
     "slug": "^0.8.0",
