@@ -51,6 +51,9 @@ app.post('/profile/:username/settings', userRoutes.settingsSave);
 app.get('/talk/add', talkRoutes.add);
 app.post('/talk/add', talkRoutes.save);
 app.get('/talk/play/:id', talkRoutes.play);
+app.get('/talk/favorite/:id', talkRoutes.favorite);
+app.get('/talk/unfavorite/:id', talkRoutes.unfavorite);
+app.get('/talk/upvote/:id', talkRoutes.upvote);
 app.get('/talk/:slug', talkRoutes.talk);
 
 app.get('/tag/:tag', tagRoutes.tag);
