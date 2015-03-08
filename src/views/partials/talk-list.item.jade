@@ -41,7 +41,19 @@
     //- Vote
     .col-xs-1.info
         .votes
-            button.btn.btn-default(type="button")
-                i.glyphicon.glyphicon-chevron-up
-                br
-                span= talk.voteCount
+            - if (user != null)
+                - if (talk.votes.indexOf(user.id) != -1)
+                    button.btn.btn-default(type="button", disabled="disabled")
+                        i.glyphicon.glyphicon-chevron-up
+                        br
+                        span= talk.voteCount
+                - else
+                    a.btn-btn-default(href="/talk/upvote/" + talk.id)
+                        i.glyphicon.glyphicon-chevron-up
+                        br
+                        span= talk.voteCount
+            - else
+                button.btn.btn-default(type="button", disabled="disabled")
+                    i.glyphicon.glyphicon-chevron-up
+                    br
+                    span= talk.voteCount
