@@ -1,0 +1,27 @@
+{
+  "name": "front",
+  "main": "index.js",
+  "version": "0.0.7",
+  "homepage": "https://github.com/tlksio/front",
+  "authors": [
+    "Raül Pérez <repejota@gmail.com>"
+  ],
+  "description": "tlks.io front end",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "tlksio",
+    "front"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "./public/components",
+    "test",
+    "tests"
+  ]
+}
