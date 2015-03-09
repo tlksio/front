@@ -3,7 +3,7 @@
     .col-xs-2.thumb
         //- Thumbnail
         a(href="talk/play/" + talk.id)
-            img.img-responsive.img-circle.thumbnail(src="http://img.youtube.com/vi/" + talk.code + "/0.jpg")
+            img.img-responsive.img-circle.thumbnail(src="http://img.youtube.com/vi/" + talk.code + "/0.jpg", title="" + talk.title)
     .col-xs-8.content
         //- Title
         h3.title: a(href="/talk/" + talk.slug)= talk.title
