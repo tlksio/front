@@ -2,7 +2,7 @@
 .row.talk
     .col-xs-2.thumb
         //- Thumbnail
-        a(href="talk/play/" + talk.id)
+        a(href="talk/play/" + talk.slug)
             img.img-responsive.img-circle.thumbnail(src="http://img.youtube.com/vi/" + talk.code + "/0.jpg", title="" + talk.title)
     .col-xs-8.content
         //- Title
@@ -21,7 +21,7 @@
                     i.glyphicon.glyphicon-comment
                     span 000
             .counter.counter_ply
-                a(href="/talk/play/" + talk.id)
+                a(href="/talk/play/" + talk.slug)
                     i.fa.fa-youtube-play
                     span= talk.viewCount
             .counter.counter_favorite

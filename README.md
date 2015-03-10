@@ -6,9 +6,8 @@ tlks.io front end
 ## Table of contents
 
 - [Build status](#build-status)
-- [Quick start](#quick-start)
-- [Bugs and feature requests](#bugs-and-feature-requests)
 - [Documentation](#documentation)
+- [Bugs and feature requests](#bugs-and-feature-requests)
 - [Contributing](#contributing)
 - [Versioning](#versioning)
 - [Creators](#creators)
@@ -20,9 +19,10 @@ tlks.io front end
 
 * Branch Develop : [![Build Status Develop](https://travis-ci.org/tlksio/front.svg?branch=develop)](https://travis-ci.org/tlksio/front)
 
-## Quick start
+## Documentation
 
-todo
+Please check the whole Project Documentation repo at:
+[tlks.io documentation](https://github.com/tlksio/docs)
 
 ## Bugs and feature requests
 
@@ -31,10 +31,6 @@ Have a bug or a feature request? Please first read the
 and search for existing and closed issues. If your problem or idea is not
 addressed yet,
 [please open a new issue](https://github.com/tlksio/front/issues/new).
-
-## Documentation
-
-todo
 
 ## Contributing
 
