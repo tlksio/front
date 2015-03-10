@@ -22,7 +22,9 @@ tlks.io front end
 
 ## Code Analysis
 
-[![Codacy](https://img.shields.io/codacy/e27821fb6289410b8f58338c7e0bc686.svg?style=flat-square)]()
+[![Codacy Badge][check-more-types-codacy-image] ][check-more-types-codacy-url]
+[check-more-types-codacy-image]: https://www.codacy.com/project/badge/25cb5d1410c7497cb057d887d1f3ea23
+[check-more-types-codacy-url]: https://www.codacy.com/public/kensho/check-more-types.git
 
 ## Documentation
 
