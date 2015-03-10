@@ -6,6 +6,7 @@ tlks.io front end
 ## Table of contents
 
 - [Build status](#build-status)
+- [Code Analysis](#code-analysis)
 - [Documentation](#documentation)
 - [Bugs and feature requests](#bugs-and-feature-requests)
 - [Contributing](#contributing)
@@ -18,6 +19,10 @@ tlks.io front end
 * Branch Master : [![Build Status Master](https://travis-ci.org/tlksio/front.svg?branch=master)](https://travis-ci.org/tlksio/front)
 
 * Branch Develop : [![Build Status Develop](https://travis-ci.org/tlksio/front.svg?branch=develop)](https://travis-ci.org/tlksio/front)
+
+## Code Analysis
+
+[![Codacy](https://img.shields.io/codacy/e27821fb6289410b8f58338c7e0bc686.svg?style=flat-square)]()
 
 ## Documentation
 
