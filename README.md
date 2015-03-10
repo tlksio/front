@@ -6,7 +6,6 @@ tlks.io front end
 ## Table of contents
 
 - [Build status](#build-status)
-- [Code Analysis](#code-analysis)
 - [Documentation](#documentation)
 - [Bugs and feature requests](#bugs-and-feature-requests)
 - [Contributing](#contributing)
@@ -19,12 +18,6 @@ tlks.io front end
 * Branch Master : [![Build Status Master](https://travis-ci.org/tlksio/front.svg?branch=master)](https://travis-ci.org/tlksio/front)
 
 * Branch Develop : [![Build Status Develop](https://travis-ci.org/tlksio/front.svg?branch=develop)](https://travis-ci.org/tlksio/front)
-
-## Code Analysis
-
-[![Codacy Badge][check-more-types-codacy-image] ][check-more-types-codacy-url]
-[check-more-types-codacy-image]: https://www.codacy.com/project/badge/25cb5d1410c7497cb057d887d1f3ea23
-[check-more-types-codacy-url]: https://www.codacy.com/public/kensho/check-more-types.git
 
 ## Documentation
 
