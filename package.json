@@ -1,6 +1,6 @@
 {
   "name": "front",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "tlks.io front",
   "main": "index.js",
   "scripts": {
