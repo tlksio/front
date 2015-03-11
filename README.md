@@ -5,6 +5,7 @@ tlks.io front end web application
 
 ## Table of contents
 
+- [Quick Start](#quick-start)
 - [Documentation](#documentation)
 - [Build status](#build-status)
 - [Bugs and feature requests](#bugs-and-feature-requests)
@@ -14,10 +15,23 @@ tlks.io front end web application
 - [Creators](#creators)
 - [Copyright and license](#copyright-and-license)
 
+## Quick Start
+
+You need *node.js* installed:
+
+```
+$ git clone http://github.com/tlksio/front
+$ cd front
+$ npm install
+$ # Create a config.json from config.json.dist
+$ node .
+$ # Point your browser at http://localhost:<config.json:port>
+```
+
 ## Documentation
 
 Please check the whole Project Documentation repo at:
-[tlks.io documentation](https://github.com/tlksio/front)
+[tlks.io documentation](https://github.com/tlksio/docs)
 
 ## Build status
 
