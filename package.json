@@ -1,10 +1,10 @@
 {
   "name": "front",
-  "version": "0.0.21",
+  "version": "0.0.22",
   "description": "tlks.io front",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "./node_modules/.bin/gulp phantom"
   },
   "repository": {
     "type": "git",
@@ -41,6 +41,7 @@
     "gulp": "^3.8.10",
     "gulp-csslint": "^0.1.5",
     "gulp-jshint": "^1.9.0",
+    "gulp-phantom": "0.0.6",
     "mocha": "^2.1.0"
   }
 }

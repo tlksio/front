@@ -1,9 +1,3 @@
-var assert = require("assert");
+var page = require('webpage').create();
 
-describe('Dummy', function(){
-    describe('test', function(){
-        it('true === true', function(){
-            assert.equal(true, true);
-        });
-    });
-});
+phantom.exit();
