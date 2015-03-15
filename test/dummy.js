@@ -1,2 +1,3 @@
-console.log('Hello, world!');
+var page = require('webpage').create();
+
 phantom.exit();

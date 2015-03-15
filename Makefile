@@ -14,6 +14,6 @@ run: build
 	node .
 
 test:
-	phantomjs test/
+	npm test
 
 .PHONY: build dist-clean lint less run test
