@@ -20,11 +20,10 @@ html(lang="en")
                     ul.nav.nav-tabs
                         li(role="posted")
                             a(href="/profile/" + profile.username) Posted
-                        li.active(role="upvoted")
+                        li(role="upvoted")
                             a(href="/profile/" + profile.username + "/upvoted") Upvoted
-                        li(role="favorited")
-                            a(href="/profile/" + profile.username + "/favorited") Favorited
-
+                        li.active(role="favorited")
+                            a(href="/favorited/" + profile.username + "/favorited") Favorited
                         li(role="collections")
                             a(href="/profile/" + profile.username + "/collections") Collections
                         li(role="followers")
@@ -33,7 +32,7 @@ html(lang="en")
                             a(href="/profile/" + profile.username + "/following") Following
             .row
                 .col-xs-12.talk-list
-                    for talk in upvoted
+                    for talk in favorited
                         include ./partials/talk-list.item.jade
 
         include partials/footer.jade
