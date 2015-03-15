@@ -18,9 +18,9 @@ html(lang="en")
             .row
                 .col-xs-12
                     ul.nav.nav-tabs
-                        li.active(role="posted")
+                        li(role="posted")
                             a(href="/profile/" + profile.username) Posted
-                        li(role="upvoted")
+                        li.active(role="upvoted")
                             a(href="/profile/" + profile.username + "/upvoted") Upvoted
                         li(role="collections")
                             a(href="/profile/" + profile.username + "/collections") Collections
@@ -30,7 +30,7 @@ html(lang="en")
                             a(href="/profile/" + profile.username + "/following") Following
             .row
                 .col-xs-12.talk-list
-                    for talk in posted
+                    for talk in upvoted
                         include ./partials/talk-list.item.jade
 
         include partials/footer.jade
