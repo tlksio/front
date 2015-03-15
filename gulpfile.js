@@ -18,7 +18,6 @@ gulp.task('jshint', function () {
 gulp.task('less', function () {
     gulp.src('./src/less/**/*.less')
     .pipe(less({
-        paths: []
     }))
     .pipe(gulp.dest('./public/css'));
 });

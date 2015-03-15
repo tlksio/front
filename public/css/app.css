@@ -1,69 +1,84 @@
 body {
   font-family: 'Droid Serif', serif;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+
+h1, h2, h3, h4, h5, h6 {
   font-family: 'Oswald', sans-serif;
 }
-.activity-list .event {
-  padding: 20px 0;
+
+.img-center {margin:0 auto;}
+
+.activity-list {
+  .event {
+    padding: 20px 0;
+  }
 }
-.talk-view .tags {
-  display: inline;
-  padding-top: 25px;
+
+.talk-view {
+  .tags {
+    display: inline;
+    padding-top: 25px;
+    .tag {
+      font-size: 1.25rem;
+      background-color: #ccc;
+      color: #666;
+      margin-right: 5px;
+      font-weight: normal;
+    }
+    .tag:hover {
+      color: #333;
+    }
+  }
 }
-.talk-view .tags .tag {
-  font-size: 1.25rem;
-  background-color: #ccc;
-  color: #666;
-  margin-right: 5px;
-  font-weight: normal;
+
+.talk-list {
+  .talk {
+    margin: 35px 0;
+    .title {
+      margin-top: 0;
+      line-height: 3.2rem;
+    }
+    .thumb {
+      padding-left: 0;
+    }
+    .description {
+      font-size: 1.45rem;
+    }
+    .info {
+      padding-right: 0;
+      .votes {
+        button {
+          width: 100%;
+        }
+      }
+    }
+    .rates {
+      i {
+        padding-right: 10px;
+      }
+    }
+    .tags {
+      display: inline;
+      .tag {
+        font-size: 1.25rem;
+        background-color: #ccc;
+        color: #666;
+        margin-right: 5px;
+        font-weight: normal;
+      }
+      .tag:hover {
+        color: #333;
+      }
+    }
+  }
 }
-.talk-view .tags .tag:hover {
-  color: #333;
-}
-.talk-list .talk {
-  margin: 35px 0;
-}
-.talk-list .talk .title {
-  margin-top: 0;
-  line-height: 3.2rem;
-}
-.talk-list .talk .thumb {
-  padding-left: 0;
-}
-.talk-list .talk .description {
-  font-size: 1.45rem;
-}
-.talk-list .talk .info {
-  padding-right: 0;
-}
-.talk-list .talk .info .votes button {
-  width: 100%;
-}
-.talk-list .talk .rates i {
-  padding-right: 10px;
-}
-.talk-list .talk .tags {
-  display: inline;
-}
-.talk-list .talk .tags .tag {
-  font-size: 1.25rem;
-  background-color: #ccc;
-  color: #666;
-  margin-right: 5px;
-  font-weight: normal;
-}
-.talk-list .talk .tags .tag:hover {
-  color: #333;
-}
+
 footer {
   margin-bottom: 25px;
-}
-footer .menu li {
-  line-height: 1.5em;
+
+  .menu {
+    li {
+      line-height: 1.5em;
+    }
+  }
 }
