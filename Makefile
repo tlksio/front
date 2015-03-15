@@ -14,6 +14,6 @@ run: build
 	node .
 
 test:
-	./node_modules/.bin/mocha test/
+	phantomjs test/
 
 .PHONY: build dist-clean lint less run test
