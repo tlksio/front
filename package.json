@@ -25,7 +25,7 @@
     "express-logger": "0.0.3",
     "express-session": "^1.10.1",
     "feed": "^0.2.6",
-    "gulp-less": "^2.0.1",
+    "gulp-less": "^2.0.3",
     "jade": "^1.9.1",
     "libtlks": "git://github.com/tlksio/libtlks#develop",
     "mongodb": "^1.4.29",
