@@ -16,14 +16,18 @@ var rssRoutes = require('./lib/routes/rss.js');
 
 var app = express();
 
-app.use(logger({path: "./log/app.log"}));
+app.use(logger({
+    path: "./log/app.log"
+}));
 app.use(favicon(__dirname + '/public/img/favicon.png'));
 app.use(serveStatic(__dirname + '/public'));
 
 app.set('view engine', 'jade');
 app.set('views', __dirname + '/src/views');
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
 app.use(session({
     secret: 'keyboard cat',
     resave: false,
@@ -66,7 +70,7 @@ app.get('/rss/tag/:tag', rssRoutes.tag);
 
 app.get('/search', talkRoutes.search);
 
-var server = app.listen(config.port, function () {
+var server = app.listen(config.port, function() {
     "use strict";
     var host = server.address().address;
     var port = server.address().port;
