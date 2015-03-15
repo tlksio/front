@@ -95,7 +95,7 @@ up, but we'll adhere to those rules whenever possible.
 **José Gil**
 
 - <http://twitter.com/josgilmo>
-- <http://github.com/repejota>
+- <http://github.com/josgilmo>
 
 ## Copyright and License
 
