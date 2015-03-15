@@ -45,6 +45,7 @@ app.get('/auth/twitter', routes.authTwitter);
 app.get('/auth/twitter/callback', routes.authTwitterCallback);
 
 app.get('/profile/:username', userRoutes.profile);
+app.get('/profile/:username/upvoted', userRoutes.profileUpvoted);
 app.get('/profile/:username/settings', userRoutes.settings);
 app.post('/profile/:username/settings', userRoutes.settingsSave);
 
