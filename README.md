@@ -92,6 +92,11 @@ up, but we'll adhere to those rules whenever possible.
 - <https://twitter.com/repejota>
 - <https://github.com/repejota>
 
+**José Gil**
+
+- <http://twitter.com/josgilmo>
+- <http://github.com/repejota>
+
 ## Copyright and License
 
 Code and documentation copyright 2015 tlks.io authors.
