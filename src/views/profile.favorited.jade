@@ -24,12 +24,6 @@ html(lang="en")
                             a(href="/profile/" + profile.username + "/upvoted") Upvoted
                         li.active(role="favorited")
                             a(href="/favorited/" + profile.username + "/favorited") Favorited
-                        li(role="collections")
-                            a(href="/profile/" + profile.username + "/collections") Collections
-                        li(role="followers")
-                            a(href="/profile/" + profile.username + "/followers") Followers
-                        li(role="following")
-                            a(href="/profile/" + profile.username + "/following") Following
             .row
                 .col-xs-12.talk-list
                     for talk in favorited

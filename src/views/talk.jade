@@ -8,6 +8,7 @@ html(lang="en")
         link(rel="shortcut icon", href="/img/favicon.png")
         include partials/talk.twitter-card.jade
     body
+        include partials/facebook.sdk.jade
         include partials/header.jade
         .container
             .row
@@ -34,6 +35,11 @@ html(lang="en")
                         .col-xs-12.tags
                             each tag in talk.tags
                                 a.label.label-default.tag(href="/tag/" + tag)= tag
+                    hr
+                    include ./partials/talk.like-facebook.jade
+                    include ./partials/talk.share-facebook.jade
+                    include ./partials/talk.share-twitter.jade
+                    include ./partials/talk.share-gplus.jade
                     hr
                     include ./partials/talk.comments.jade
                         .tags
