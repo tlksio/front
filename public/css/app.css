@@ -52,7 +52,7 @@ h6 {
   padding-right: 10px;
 }
 .talk-list .talk .tags {
-  display: inline;
+  line-height: 2.5em;
 }
 .talk-list .talk .tags .tag {
   font-size: 1.25rem;
@@ -60,6 +60,11 @@ h6 {
   color: #666;
   margin-right: 5px;
   font-weight: normal;
+  padding: 5px;
+  line-height: 1.5rem;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
 }
 .talk-list .talk .tags .tag:hover {
   color: #333;
