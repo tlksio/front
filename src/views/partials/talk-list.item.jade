@@ -29,15 +29,15 @@
                     - if (talk.favorites.indexOf(user.id) != -1)
                         a(href="/talk/unfavorite/" + talk.id)
                             i.glyphicon.glyphicon-heart
-                                span= talk.favoriteCount
+                            span= talk.favoriteCount
                     - else
                         a(href="/talk/favorite/" + talk.id)
                             i.glyphicon.glyphicon-heart
-                                span= talk.favoriteCount
+                            span= talk.favoriteCount
                 - else
                     div
                         i.glyphicon.glyphicon-heart
-                            span= talk.favoriteCount
+                        span= talk.favoriteCount
     //- Vote
     .col-xs-1.info
         .votes
