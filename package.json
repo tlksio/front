@@ -29,7 +29,6 @@
         "express-logger": "0.0.3",
         "express-session": "^1.10.1",
         "feed": "^0.2.6",
-        "gulp-less": "^2.0.3",
         "jade": "^1.9.1",
         "libtlks": "git://github.com/tlksio/libtlks#develop",
         "mongodb": "^1.4.29",
@@ -42,6 +41,7 @@
         "xml": "^1.0.0"
     },
     "devDependencies": {
+        "gulp-less": "^3.0.1",
         "gulp": "^3.8.10",
         "gulp-csslint": "^0.1.5",
         "gulp-jshint": "^1.9.0",
