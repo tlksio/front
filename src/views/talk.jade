@@ -21,16 +21,20 @@ html(lang="en")
                                 iframe.embed-responsive-item(src="https://www.youtube.com/embed/" + talk.code)
                         .col-xs-4
                             p= talk.description
-                            .info
-                                .counter.counter_cmnt
-                                    i.glyphicon.glyphicon-comment
-                                    span 000
-                                .counter.counter_ply
-                                    i.glyphicon.glyphicon-play
-                                    span= talk.views
-                                .counter.counter_favorite
-                                    i.glyphicon.glyphicon-heart
-                                    span= talk.likes
+                            .row
+                                .col-xs-6
+                                    .info
+                                        .counter.counter_cmnt
+                                            i.glyphicon.glyphicon-comment
+                                            span 000
+                                        .counter.counter_ply
+                                            i.glyphicon.glyphicon-play
+                                            span= talk.viewCount
+                                        .counter.counter_favorite
+                                            i.glyphicon.glyphicon-heart
+                                            span= talk.favoriteCount
+                                .col-xs-6
+                                    span vote
                     .row
                         .col-xs-12.tags
                             each tag in talk.tags
