@@ -14,26 +14,39 @@ var userRoutes = require('./lib/routes/user.js');
 var tagRoutes = require('./lib/routes/tag.js');
 var rssRoutes = require('./lib/routes/rss.js');
 
+// express.js application
 var app = express();
 
+// using a simple logger
 app.use(logger({
     path: "./log/app.log"
 }));
-app.use(favicon(__dirname + '/public/img/favicon.png'));
+
+// add a favicon to the app
+var favicon_path = __dirname + '/public/img/favicon.png';
+app.use(favicon(favicon_path));
+
+// serve public assets from './public'
 app.use(serveStatic(__dirname + '/public'));
 
+// use jade as a template engine
 app.set('view engine', 'jade');
 app.set('views', __dirname + '/src/views');
+
+// parse body payloads
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: true
 }));
+
+// this express.js app use sessions
 app.use(session({
     secret: 'keyboard cat',
     resave: false,
     saveUninitialized: true
 }));
 
+// routes
 app.get('/', routes.index);
 app.get('/activity', routes.activity);
 
@@ -70,6 +83,7 @@ app.get('/rss/tag/:tag', rssRoutes.tag);
 
 app.get('/search', talkRoutes.search);
 
+// start the HTTP server
 var server = app.listen(config.port, function() {
     "use strict";
     var host = server.address().address;

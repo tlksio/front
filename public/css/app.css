@@ -15,6 +15,10 @@ h6 {
 .activity-list .event {
   padding: 20px 0;
 }
+.activity-list .event .created {
+  font-style: italic;
+  color: #999;
+}
 .talk-view .tags {
   display: inline;
   padding-top: 25px;
