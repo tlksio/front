@@ -11,6 +11,10 @@ h1, h2, h3, h4, h5, h6 {
 .activity-list {
   .event {
     padding: 20px 0;
+    .created {
+        font-style: italic;
+        color: #999;
+    }
   }
 }
 
@@ -58,13 +62,18 @@ h1, h2, h3, h4, h5, h6 {
       }
     }
     .tags {
-      display: inline;
+      line-height: 2.5em;
       .tag {
         font-size: 1.25rem;
         background-color: #ccc;
         color: #666;
         margin-right: 5px;
         font-weight: normal;
+        padding: 5px;
+        line-height: 1.5rem;
+        -webkit-border-radius: 2px;
+        -moz-border-radius: 2px;
+        border-radius: 2px;
       }
       .tag:hover {
         color: #333;

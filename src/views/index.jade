@@ -14,12 +14,15 @@ html(lang="en")
 
         .container.search-form
             .row
-                .col-xs-12.talk-list
-                    form(method="get", action="/search")
+                .col-xs-12
+                    h2 Search
+                    hr
+                    form.form-inline(method="get", action="/search")
                         .form-group
-                            label(for="q") Search
-                            input.form-control(type="search", name="q", id="q", placeholder="Search talks")
-                        button.btn.btn-default(type="submit") Submit
+                            input.form-control.input-lg(type="search", name="q", id="q", placeholder="Search talks")
+                            button.btn.btn-primary.btn-lg(type="submit")
+                                i.fa.fa-search
+                                span Search
 
         //- Latest talks
         .container.latest-talks
@@ -31,7 +34,7 @@ html(lang="en")
                         include ./partials/talk-list.item.jade
                         hr
         //- Popular talks
-        .container
+        .container.popular-talks
             .row
                 .col-xs-12.talk-list
                     h2 Popular talks

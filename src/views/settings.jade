@@ -7,24 +7,23 @@ html(lang="en")
         include partials/main.css.jade
         link(rel="shortcut icon", href="/img/favicon.png")
     body
+        include partials/facebook.sdk.jade
         include partials/header.jade
         .container
             h1 Settings
             hr
             .row
-                .col-xs-8
+                .col-xs-2.text-center
+                    img.responsive.img-circle(src=""+user.avatar)
+                .col-xs-10
                     form.form-horizontal(method="post", action="/profile/" + user.username + "/settings")
                         input.form-control(type="hidden", name="id", id="id", value= user.id)
                         .form-group
                             .col-xs-2
                                 label(for="username") Username
                             .col-xs-10
-                                p.form-control-static= user.username
-                        .form-group
-                            .col-xs-2
-                                label(for="avatar") Avatar
-                            .col-xs-10
-                                p.form-control-static= user.avatar
+                                p.form-control-static @
+                                    = user.username
                         .form-group
                             .col-xs-2
                                 label(for="email") Email
@@ -40,7 +39,6 @@ html(lang="en")
                                 a.btn.btn-danger(href="/") Cancel
                             .col-xs-6.text-right
                                 input.btn.btn-primary(type="submit", value="Save profile")
-                .col-xs-4
         include partials/footer.jade
         include partials/main.js.jade
         include partials/google.analytics.jade

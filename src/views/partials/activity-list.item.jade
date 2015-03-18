@@ -1,10 +1,14 @@
-.event
-    i.fa.fa-plus-square
-    = ' '
-    a(href="/profile/" + talk.author.username)
-        span @
-        span= talk.author.username
-    = ' '
-    span posted
-    = ' '
-    a(href="/talk/" + talk.slug)= talk.title
+.row.event
+    .col-xs-10
+        a(href="/profile/" + talk.author.username)
+            span @
+            span= talk.author.username
+        = ' '
+        span posted
+        = ' '
+        a(href="/talk/" + talk.slug)= talk.title
+        br
+        span.created= ""+moment(talk.created).format("MMMM Do YYYY, h:mm:ss a")
+    .col-xs-2
+        a(href="/profile/"+talk.author.username)
+            img.responsive.img-circle(src=""+talk.author.avatar, title="@"+talk.author.username, style="width: 32px")

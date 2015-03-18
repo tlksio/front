@@ -6,6 +6,7 @@ dist-clean:
 
 lint:
 	./node_modules/.bin/gulp jshint
+	./node_modules/.bin/gulp csslint
 
 less:
 	./node_modules/.bin/gulp less

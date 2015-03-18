@@ -7,15 +7,18 @@ html(lang="en")
         include partials/main.css.jade
         link(rel="shortcut icon", href="/img/favicon.png")
     body
+        include partials/facebook.sdk.jade
         include partials/header.jade
-        .container
-            .row
+        .container.profile
+            .row.information
                 .col-xs-3
                     img.img-responsive.img-circle(src=profile.avatar)
                 .col-xs-9
-                    h1 @
-                        span= profile.username
-            .row
+                    .title= profile.username
+                    .bio= profile.bio
+                    .meta
+                        a(href="http://twitter.com/"+profile.username)= "@" + profile.username
+            .row.lists-tab
                 .col-xs-12
                     ul.nav.nav-tabs
                         li.active(role="posted")
@@ -24,7 +27,7 @@ html(lang="en")
                             a(href="/profile/" + profile.username + "/upvoted") Upvoted
                         li(role="favorited")
                             a(href="/favorited/" + profile.username + "/favorited") Favorited
-            .row
+            .row.lists-content
                 .col-xs-12.talk-list
                     for talk in posted
                         include ./partials/talk-list.item.jade

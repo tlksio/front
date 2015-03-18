@@ -1,6 +1,6 @@
 {
   "name": "front",
-  "version": "0.0.23",
+  "version": "0.0.24",
   "description": "tlks.io front",
   "main": "index.js",
   "scripts": {
@@ -16,6 +16,16 @@
     "frontend"
   ],
   "author": "Raül Pérez <repejota@gmail.com>",
+  "contributors": [
+    {
+      "name": "José Gil",
+      "email": "josgilmo@gmail.com"
+    },
+    {
+      "name": "Eric Pinto",
+      "email": "ericpinto1985@gmail.com"
+    }
+  ],
   "license": "MIT",
   "dependencies": {
     "async": "^0.9.0",
@@ -25,9 +35,9 @@
     "express-logger": "0.0.3",
     "express-session": "^1.10.1",
     "feed": "^0.2.6",
-    "gulp-less": "^2.0.3",
     "jade": "^1.9.1",
     "libtlks": "git://github.com/tlksio/libtlks#develop",
+    "moment": "^2.9.0",
     "mongodb": "^1.4.29",
     "oauth": "^0.9.12",
     "request": "^2.53.0",
@@ -38,6 +48,7 @@
     "xml": "^1.0.0"
   },
   "devDependencies": {
+    "gulp-less": "^3.0.1",
     "gulp": "^3.8.10",
     "gulp-csslint": "^0.1.5",
     "gulp-jshint": "^1.9.0",
