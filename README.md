@@ -97,6 +97,11 @@ up, but we'll adhere to those rules whenever possible.
 - <http://twitter.com/josgilmo>
 - <http://github.com/josgilmo>
 
+**Eric Pinto**
+
+- <http://twitter.com/_dawnangel_>
+- <http://github.com/dawnangel>
+
 ## Copyright and License
 
 Code and documentation copyright 2015 tlks.io authors.
