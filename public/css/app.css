@@ -36,6 +36,9 @@ i.tag {
 .talk-view .tags .tag:hover {
   color: #333;
 }
+.talk-view .info i {
+  margin-right: 10px;
+}
 .talk-list .talk {
   margin: 35px 0;
 }
