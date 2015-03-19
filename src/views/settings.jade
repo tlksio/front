@@ -31,6 +31,12 @@ html(lang="en")
                                 input.form-control(type="text", name="email", id="email", placeholder="email@example.com", value=user.email)
                         .form-group
                             .col-xs-2
+                                label(for="url") URL
+                            .col-xs-10
+                                input.form-control(type="url",
+                                name="url", id="url", placeholder="http://example.com", value=user.url)
+                        .form-group
+                            .col-xs-2
                                 label(for="bio") Bio
                             .col-xs-10
                                 textarea.form-control(name="bio", id="bio")= user.bio
