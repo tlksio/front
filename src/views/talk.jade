@@ -64,11 +64,13 @@ html(lang="en")
                     hr
                     include ./partials/talk.comments.jade
                         .tags
-                    h3 Related talks
-                    hr
-                    each talk in related
-                        include ./partials/talk-list.item.jade
+                .row
+                    .col-xs-12.talk-list
+                        h3 Related talks
                         hr
+                        each talk in related
+                            include ./partials/talk-list.item.jade
+                            hr
 
         include partials/footer.jade
         include partials/main.js.jade
