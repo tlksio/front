@@ -12,7 +12,7 @@
         //- Tags
         .tags
             each tag in talk.tags
-                a.tag(href="/tag/" + tag)= tag
+                a.tag(href="/tag/" + encodeURIComponent(tag))= tag
     //- Stats
     .col-xs-1.rates
         .stats

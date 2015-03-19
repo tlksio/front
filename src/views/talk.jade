@@ -55,7 +55,7 @@ html(lang="en")
                     .row
                         .col-xs-12.tags
                             each tag in talk.tags
-                                a.label.label-default.tag(href="/tag/" + tag)= tag
+                                a.label.label-default.tag(href="/tag/" + encodeURIComponent(tag))= tag
                     hr
                     include ./partials/talk.like-facebook.jade
                     include ./partials/talk.share-facebook.jade
