@@ -1,0 +1,36 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="utf-8")
+        title tlks.io : HTTP Error 404 : Not Found
+        include partials/google.webmastertools.jade
+        include partials/main.css.jade
+        link(rel="shortcut icon", href="/img/favicon.png")
+    body
+        include partials/facebook.sdk.jade
+        include partials/header.jade
+        .container
+            .row
+                .col-xs-12.text-center
+                    h1 Oops!
+                    h2 HTTP 404 : Not Found
+                    .container
+                        .row.error-details
+                            .col-xs-12
+                                span Sorry, an error has occured, Requested page not found!
+                    .row.error-actions
+                        .col-xs-4
+                        .col-xs-2
+                            a.btn.btn-primary(href="/")
+                                span.glyphicon.glyphicon-home
+                                span #{" "}
+                                span Home
+                        .col-xs-2
+                            a.btn.btn-default(href="/about")
+                                span.glyphicon.glyphicon-envelope
+                                span #{" "}
+                                span Support
+                        .col-xs-4
+        include partials/footer.jade
+        include partials/main.js.jade
+        include partials/google.analytics.jade
