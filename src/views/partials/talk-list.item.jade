@@ -27,11 +27,11 @@
             .counter.counter_favorite
                 - if (user != null)
                     - if (talk.favorites.indexOf(user.id) != -1)
-                        a(href="/talk/unfavorite/" + talk.id)
-                            i.glyphicon.glyphicon-heart
+                        button.btn.js-unfavorite(type="button", value=talk.id)
+                            i.glyphicon.glyphicon-heart.red
                             span= talk.favoriteCount
                     - else
-                        a(href="/talk/favorite/" + talk.id)
+                        button.btn.js-favorite(type="button",value=talk.id)
                             i.glyphicon.glyphicon-heart
                             span= talk.favoriteCount
                 - else
