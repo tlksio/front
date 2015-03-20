@@ -79,6 +79,9 @@ i.tag {
 .talk-list .talk .tags .tag:hover {
   color: #333;
 }
+.error-details {
+  padding: 20px;
+}
 footer {
   margin-bottom: 25px;
 }

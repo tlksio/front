@@ -48,7 +48,7 @@
                         br
                         span= talk.voteCount
                 - else
-                    a.btn.btn-primary(href="/talk/upvote/" + talk.id)
+                    a.btn.btn-primary.js-vote(href="javascript:void(0);", rel=talk.id)
                         i.glyphicon.glyphicon-chevron-up
                         br
                         span= talk.voteCount
