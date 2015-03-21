@@ -13,9 +13,9 @@ html(lang="en")
             h1 Settings
             hr
             .row
-                .col-xs-2.text-center
-                    img.responsive.img-circle(src=""+user.avatar)
-                .col-xs-10
+                .col-xs-3.text-center
+                    img.responsive.img-circle(src=""+user.avatar.replace("_normal", ""))
+                .col-xs-9
                     form.form-horizontal(method="post", action="/profile/" + user.username + "/settings")
                         input.form-control(type="hidden", name="id", id="id", value= user.id)
                         .form-group
