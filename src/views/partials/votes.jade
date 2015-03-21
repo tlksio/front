@@ -1,0 +1,45 @@
+//- Stats
+.col-xs-1.rates
+    .stats      
+        .counter.counter_cmnt
+            a(href="/talk/" + talk.slug)
+                i.glyphicon.glyphicon-comment
+                span 000
+        .counter.counter_ply
+            a(href="/talk/play/" + talk.slug)
+                i.fa.fa-youtube-play
+                span= talk.viewCount
+        .counter.counter_favorite
+            - if (user != null)
+                - if (talk.favorites.indexOf(user.id) != -1)
+                    button.btn.js-unfavorite(type="button", value=talk.id)
+                        i.glyphicon.glyphicon-heart.red
+                        span= talk.favoriteCount
+                - else
+                    button.btn.js-favorite(type="button",value=talk.id)
+                        i.glyphicon.glyphicon-heart
+                        span= talk.favoriteCount
+            - else
+                div
+                    i.glyphicon.glyphicon-heart
+                    span= talk.favoriteCount
+//- Vote
+.col-xs-1.info
+    .votes
+        - if (user != null)
+            - if (talk.votes.indexOf(user.id) != -1)
+                button.btn.btn-primary(type="button", disabled="disabled")
+                    i.glyphicon.glyphicon-chevron-up
+                    br
+                    span= talk.voteCount
+            - else
+                a.btn.btn-primary.js-vote(href="javascript:void(0);", rel=talk.id)
+                    i.glyphicon.glyphicon-chevron-up
+                    br
+                    span= talk.voteCount
+        - else
+            button.btn.btn-primary(type="button", disabled="disabled")
+                i.glyphicon.glyphicon-chevron-up
+                br
+                span= talk.voteCount
+
