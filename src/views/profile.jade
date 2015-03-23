@@ -11,11 +11,12 @@ html(lang="en")
         include partials/header.jade
         .container.profile
             .row.information
-                .col-xs-3
-                    img.img-responsive.img-circle(src=profile.avatar)
-                .col-xs-9
+                .col-xs-4
+                    img.responsive.img-circle(src=""+profile.avatar.replace("_normal", ""))
+                .col-xs-8
                     .title= profile.username
                     .bio= profile.bio
+                    hr
                     .meta
                         a(href="http://twitter.com/"+profile.username)= "@" + profile.username
             .row.lists-tab
