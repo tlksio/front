@@ -3,11 +3,13 @@ html(lang="en")
     head
         meta(charset="utf-8")
         title= title
+        meta(description= description)
         include partials/google.webmastertools.jade
         include partials/main.css.jade
         link(rel="shortcut icon", href="/img/favicon.png")
-        include partials/talk.twitter-card.jade
-        include partials/talk.open-graph.jade
+        include partials/talk.meta-twitter-card.jade
+        include partials/talk.meta-open-graph.jade
+        include partials/talk.meta-article.jade
     body
         include partials/facebook.sdk.jade
         include partials/header.jade
@@ -20,40 +22,12 @@ html(lang="en")
                         .col-xs-8
                             .embed-responsive.embed-responsive-16by9
                                 iframe.embed-responsive-item(src="https://www.youtube.com/embed/" + talk.code)
-                        .col-xs-4
-                            p= talk.description
-                            .row
-                                .col-xs-6
-                                    .info
-                                        .counter.counter_cmnt
-                                            i.glyphicon.glyphicon-comment
-                                            span 000
-                                        .counter.counter_ply
-                                            i.glyphicon.glyphicon-play
-                                            span= talk.viewCount
-                                        .counter.counter_favorite
-                                            i.glyphicon.glyphicon-heart
-                                            span= talk.favoriteCount
-                                .col-xs-6
-                                    .votes
-                                        - if (user != null)
-                                            - if (talk.votes.indexOf(user.id) != -1)
-                                                button.btn.btn-primary(type="button", disabled="disabled")
-                                                    i.glyphicon.glyphicon-chevron-up
-                                                    br
-                                                    span= talk.voteCount
-                                            - else
-                                                a.btn.btn-primary(href="/talk/upvote/" + talk.id)
-                                                    i.glyphicon.glyphicon-chevron-up
-                                                    br
-                                                    span= talk.voteCount
-                                        - else
-                                            button.btn.btn-primary(type="button", disabled="disabled")
-                                                i.glyphicon.glyphicon-chevron-up
-                                                br
-                                                span= talk.voteCount
+                        include partials/votes.jade
                     .row
-                        .col-xs-12.tags
+                        .col-xs-12
+                            p= talk.description
+                    .row
+                        .col-xs-10.tags
                             each tag in talk.tags
                                 a.label.label-default.tag(href="/tag/" + encodeURIComponent(tag))= tag
                     hr
