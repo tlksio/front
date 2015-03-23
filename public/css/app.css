@@ -82,13 +82,25 @@ i.tag {
 .error-details {
   padding: 20px;
 }
+.profile .information {
+  padding-bottom: 25px;
+}
+.profile .information img {
+  width: 65%;
+}
+.profile .information .title {
+  font-size: 2em;
+  font-weight: bold;
+  padding-bottom: 10px;
+  font-family: 'Oswald', sans-serif;
+}
+.profile .information .bio {
+  font-size: 1.5em;
+  line-height: 1.4em;
+}
 footer {
   margin-bottom: 25px;
 }
 footer .menu li {
   line-height: 1.5em;
-}
-
-.red {
-    color: #f00;
 }

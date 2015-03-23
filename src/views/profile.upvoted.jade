@@ -9,14 +9,18 @@ html(lang="en")
     body
         include partials/facebook.sdk.jade
         include partials/header.jade
-        .container
-            .row
-                .col-xs-3
-                    img.img-responsive.img-circle(src=profile.avatar)
-                .col-xs-9
-                    h1 @
-                        span= profile.username
-            .row
+        .container.profile
+            .row.information
+                .col-xs-4
+                    img.responsive.img-circle(src=""+profile.avatar.replace("_normal", ""))
+                .col-xs-8
+                    .title= profile.username
+                    .bio= profile.bio
+                    hr
+                    .meta
+                        a(href="http://twitter.com/"+profile.username)= "@" + profile.username
+
+            .row.lists-tab
                 .col-xs-12
                     ul.nav.nav-tabs
                         li(role="posted")
