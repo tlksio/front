@@ -2,7 +2,7 @@
 .col-xs-1.rates
     .stats
         .counter.counter_cmnt
-            a(href="/talk/" + talk.slug)
+            a(href="/talk/" + talk.slug, data-disqus-identifier=talk.id)
                 i.glyphicon.glyphicon-comment
                 span.disqus-comment-count(data-disqus-identifier=talk.id)
         .counter.counter_ply
