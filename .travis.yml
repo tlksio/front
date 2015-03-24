@@ -3,3 +3,5 @@ node_js:
   - 0.12
 install:
   - npm install
+notifications:
+  slack: tlksio:fNbJkMIvB9GZKDDjfjZqAzBb
