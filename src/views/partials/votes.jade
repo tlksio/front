@@ -1,10 +1,10 @@
 //- Stats
 .col-xs-1.rates
-    .stats      
+    .stats
         .counter.counter_cmnt
-            a(href="/talk/" + talk.slug)
+            a(href="/talk/" + talk.slug, data-disqus-identifier=talk.id)
                 i.glyphicon.glyphicon-comment
-                span 000
+                span.disqus-comment-count(data-disqus-identifier=talk.id)
         .counter.counter_ply
             a(href="/talk/play/" + talk.slug)
                 i.fa.fa-youtube-play
