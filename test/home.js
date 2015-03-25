@@ -1,9 +1,13 @@
-var page = require('webpage').create();
-var base_url = "http://tlks.io";
-var url;
+var casper = require('casper').create();
 
-url = "";
-page.open(base_url + url, function(status) {
-    console.log(base_url + url + " status: " + status);
-    phantom.exit();
+casper.start('http://tlks.io/', function() {
+        this.echo(this.getTitle());
 });
+
+/*
+casper.thenOpen('http://phantomjs.org', function() {
+        this.echo(this.getTitle());
+});
+*/
+
+casper.run();

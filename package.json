@@ -4,7 +4,7 @@
   "description": "tlks.io front",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/gulp phantom"
+    "test": "./node_modules/.bin/casperjs test/home.js"
   },
   "repository": {
     "type": "git",
@@ -48,10 +48,11 @@
     "xml": "^1.0.0"
   },
   "devDependencies": {
-    "gulp-less": "^3.0.1",
+    "casperjs": "^1.1.0-beta3",
     "gulp": "^3.8.10",
     "gulp-csslint": "^0.1.5",
     "gulp-jshint": "^1.9.0",
+    "gulp-less": "^3.0.1",
     "gulp-phantom": "0.0.6",
     "mocha": "^2.1.0"
   }
