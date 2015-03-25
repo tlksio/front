@@ -98,6 +98,9 @@ i.tag {
   font-size: 1.5em;
   line-height: 1.4em;
 }
+.about p {
+  font-size: 1.2em;
+}
 footer {
   margin-bottom: 25px;
 }
