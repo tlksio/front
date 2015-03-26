@@ -9,6 +9,10 @@ exports.testTerms = function(test) {
         .then(function() {
             test.assertHttpStatus(200, pageURL + ' is up');
         })
+        .then(function() {
+            var title = "tlks.io : Terms of service";
+            test.assertTitle(title, "title is the one expected");
+        })
         .run(function() {
             test.done();
         });
