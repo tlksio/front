@@ -4,7 +4,7 @@ var faq = require('./tests/faq');
 var privacy = require('./tests/privacy');
 var terms = require('./tests/terms');
 
-casper.test.begin('Testing tlks.io : Home', 3, home.testHome),
+casper.test.begin('Testing tlks.io : Home', 8, home.testHome),
 casper.test.begin('Testing tlks.io : About', 3, about.testAbout),
 casper.test.begin('Testing tlks.io : FAQ UI', 3, faq.testFAQ),
 casper.test.begin('Testing tlks.io : Privacy', 3, privacy.testPrivacy)
