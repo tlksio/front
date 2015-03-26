@@ -1,6 +1,6 @@
-var pageURL = "http://tlks.io/faq";
+var pageURL = "http://tlks.io/privacy";
 
-exports.testFAQ = function(test) {
+exports.testPrivacy = function(test) {
     casper
         .start(pageURL)
         .then(function() {
