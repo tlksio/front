@@ -10,7 +10,7 @@ casper.test.begin('Testing tlks.io : About', 3, about.testAbout);
 casper.test.begin('Testing tlks.io : FAQ UI', 3, faq.testFAQ);
 casper.test.begin('Testing tlks.io : Privacy', 3, privacy.testPrivacy);
 casper.test.begin('Testing tlks.io : Terms', 3, terms.testTerms);
-casper.test.begin('Testing tlks.io : Activity', 1, activity.testActivity);
+casper.test.begin('Testing tlks.io : Activity', 3, activity.testActivity);
 
 casper.test.begin('Finish suite', 0, function() {
     casper.exit();
