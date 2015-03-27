@@ -33,6 +33,10 @@ html(lang="en")
                     each talk in latest
                         include ./partials/talk-list.item.jade
                         hr
+            .row
+                .col-xs-12
+                    a(href="/latest") View more...
+                    hr
         //- Popular talks
         .container.popular-talks
             .row
@@ -42,6 +46,11 @@ html(lang="en")
                     each talk in popular
                         include ./partials/talk-list.item.jade
                         hr
+            .row
+                .col-xs-12
+                    a(href="/popular") View more...
+                    hr
+
 
         include partials/footer.jade
         include partials/main.js.jade
