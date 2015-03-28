@@ -1,6 +1,6 @@
 {
   "name": "front",
-  "version": "0.0.57",
+  "version": "0.0.58",
   "description": "tlks.io front",
   "main": "index.js",
   "scripts": {
@@ -24,6 +24,14 @@
     {
       "name": "Eric Pinto",
       "email": "ericpinto1985@gmail.com"
+    },
+    {
+      "name": "Issel Guberna",
+      "email": "issel.guberna@gmail.com"
+    },
+    {
+      "name": "Gorka López de Torre",
+      "email": "glopezdetorre@gmail.com"
     }
   ],
   "license": "MIT",
