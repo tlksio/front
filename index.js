@@ -46,12 +46,6 @@ app.use(session({
     saveUninitialized: true
 }));
 
-// default handler
-app.use(function(req, res) {
-    var context = {};
-    res.status(404).render('404', context);
-});
-
 // routes
 app.get('/', routes.index);
 app.get('/activity', routes.activity);
