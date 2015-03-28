@@ -28,6 +28,14 @@ $ node .
 $ # Point your browser at http://localhost:<config.json:port>
 ```
 
+To speed up the development, we recommend you use *nodemon*:
+
+```
+$ sudo npm install -g nodemon
+$ # Instead of using "node ." use this line
+$ nodemon .
+```
+
 ## Documentation
 
 Please check the whole Project Documentation repo at:
