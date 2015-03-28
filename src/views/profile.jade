@@ -30,8 +30,12 @@ html(lang="en")
                             a(href="/favorited/" + profile.username + "/favorited") Favorited
             .row.lists-content
                 .col-xs-12.talk-list
-                    for talk in posted
-                        include ./partials/talk-list.item.jade
+                    if posted.length
+                        for talk in posted
+                            include ./partials/talk-list.item.jade
+                    else
+                        p.margin-top-20.text-center You don't have any talks published. 
+                            a(href="/talk/add") Publish now!
 
         include partials/footer.jade
         include partials/main.js.jade
