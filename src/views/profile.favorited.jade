@@ -30,8 +30,11 @@ html(lang="en")
                             a(href="/favorited/" + profile.username + "/favorited") Favorited
             .row
                 .col-xs-12.talk-list
-                    for talk in favorited
-                        include ./partials/talk-list.item.jade
+                    if favorited.length
+                        for talk in favorited
+                            include ./partials/talk-list.item.jade
+                    else
+                        div.margin-top-20.text-center You still not favorited any talk! 
 
         include partials/footer.jade
         include partials/main.js.jade

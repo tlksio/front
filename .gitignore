@@ -3,3 +3,4 @@ public/components
 log
 config.json
 test/*.txt
+.idea
