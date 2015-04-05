@@ -31,10 +31,7 @@ html(lang="en")
                             each tag in talk.tags
                                 a.label.label-default.tag(href="/tag/" + encodeURIComponent(tag))= tag
                     hr
-                    include ./partials/talk.like-facebook.jade
-                    include ./partials/talk.share-facebook.jade
-                    include ./partials/talk.share-twitter.jade
-                    include ./partials/talk.share-gplus.jade
+                    include ./partials/talk.share.jade
                     hr
                     include ./partials/talk.comments.jade
                         .tags
