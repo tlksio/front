@@ -22,6 +22,11 @@ i.tag {
   font-style: italic;
   color: #999;
 }
+.search-form .search-string {
+  width: 100%;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
 .talk-view .tags {
   display: inline;
   padding-top: 25px;
