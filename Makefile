@@ -1,10 +1,10 @@
-build:
+build: less
 	./node_modules/.bin/gulp default
 
 dist-clean:
 	rm -rf node_modules
 
-lint:
+lint: less
 	./node_modules/.bin/gulp jshint
 	./node_modules/.bin/gulp csslint
 
