@@ -1,15 +1,10 @@
-//- Talk
 .row.talk
     .col-xs-2.thumb
-        //- Thumbnail
         a(href="/talk/play/" + talk.slug)
-            img.img-responsive.img-circle.thumbnail(src="http://img.youtube.com/vi/" + talk.code + "/0.jpg", title="" + talk.title)
+            img.img-responsive.img-circle.thumbnail(src="http://img.youtube.com/vi/" + talk.code + "/0.jpg", title=talk.title)
     .col-xs-8.content
-        //- Title
         h3.title: a(href="/talk/" + talk.slug)= talk.title
-        //- Description
         p.description= talk.description
-        //- Tags
         .tags
             each tag in talk.tags
                 a.tag(href="/tag/" + encodeURIComponent(tag))= tag

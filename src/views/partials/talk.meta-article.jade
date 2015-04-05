@@ -1,7 +1,7 @@
 //- meta(name="article:published_time", content=moment(talk.created).utc().format("YYYY-MM-DDTHH:mm:ss") + "Z")
 //- meta(name="article:modified_time", content=moment(talk.updated).utc().format("YYYY-MM-DDTHH:mm:ss") + "Z")
 meta(name="article:author", content=talk.author.username)
-//- //- string - A high-level section name. E.g. Technology
+//- string - A high-level section name. E.g. Technology
 //- meta(name="article:section", content=xxx)
 each tag in talk.tags
     meta(name="article:tag", content=tag)
