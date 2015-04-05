@@ -39,6 +39,14 @@ i.tag {
 .talk-view .info i {
   margin-right: 10px;
 }
+.talk-view ul.share-buttons {
+  list-style: none;
+  padding: 0;
+}
+.talk-view ul.share-buttons li {
+  display: inline;
+  padding-right: 10px;
+}
 .talk-list .talk {
   margin: 35px 0;
 }
