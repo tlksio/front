@@ -4,9 +4,7 @@
             h2 Search
             hr
             form.form-inline(method="get", action="/search")
-                .form-group
-                    input.form-control.input-lg(type="search", name="q", id="q", placeholder="Search talks")
-                    button.btn.btn-primary.btn-lg(type="submit")
+                .form-group(style="display:table;")
+                    input.form-control.input-lg.search-string(type="search", name="q", id="q", placeholder="Search talks", autofocus="autofocus", autocomplete="off")
+                    span.input-group-addon(style="width: 1%;")
                         i.fa.fa-search
-                        span Search
-
