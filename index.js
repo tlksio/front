@@ -62,7 +62,9 @@ app.get('/auth/twitter', routes.authTwitter);
 app.get('/auth/twitter/callback', routes.authTwitterCallback);
 
 app.get('/popular', talkRoutes.popular);
+app.get('/popular/:page', talkRoutes.popular);
 app.get('/latest', talkRoutes.latest);
+app.get('/latest/:page', talkRoutes.latest);
 
 app.get('/profile/:username', userRoutes.profile);
 app.get('/profile/:username/upvoted', userRoutes.profileUpvoted);
