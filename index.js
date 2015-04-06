@@ -81,6 +81,7 @@ app.get('/talk/upvote/:id', talkRoutes.upvote);
 app.get('/talk/:slug', talkRoutes.talk);
 
 app.get('/tag/:tag', tagRoutes.tag);
+app.get('/tag/:tag/:page', tagRoutes.tag);
 
 app.get('/rss/latest', rssRoutes.latest);
 app.get('/rss/popular', rssRoutes.popular);
