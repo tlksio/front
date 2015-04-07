@@ -23,8 +23,8 @@ app.use(logger({
 }));
 
 // add a favicon to the app
-var favicon_path = __dirname + '/public/img/favicon.png';
-app.use(favicon(favicon_path));
+var faviconPath = __dirname + '/public/img/favicon.png';
+app.use(favicon(faviconPath));
 
 // serve public assets from './public'
 app.use(serveStatic(__dirname + '/public'));
