@@ -5,25 +5,39 @@ var less = require('gulp-less');
 var phantom = require('gulp-phantom');
 
 gulp.task('csslint', function() {
-    gulp.src('./public/css/**/*.css')
+    'use strict';
+
+    return gulp.src('./public/css/**/*.css')
         .pipe(csslint())
         .pipe(csslint.reporter());
 });
 
 gulp.task('jshint', function() {
-    gulp.src(['./lib/**/*.js', './index.js'])
+    'use strict';
+
+    return gulp.src([
+            './test/**/*.js',
+            './lib/**/*.js',
+            'index.js',
+            'gulpfile.js'
+        ])
         .pipe(jshint())
-        .pipe(jshint.reporter('default'));
+        .pipe(jshint.reporter('jshint-stylish'))
+        .pipe(jshint.reporter('fail'));
 });
 
 gulp.task('less', function() {
-    gulp.src('./src/less/**/*.less')
+    'use strict';
+
+    return gulp.src('./src/less/**/*.less')
         .pipe(less({}))
         .pipe(gulp.dest('./public/css'));
 });
 
 gulp.task('phantom', function() {
-    gulp.src("./test/*.js")
+    'use strict';
+
+    return gulp.src('./test/*.js')
         .pipe(phantom())
         .pipe(gulp.dest('./test'));
 });
