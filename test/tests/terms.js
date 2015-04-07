@@ -1,10 +1,13 @@
 var pageURL = 'http://tlks.io/terms';
 
 exports.testTerms = function(test) {
+    'use strict';
+
     casper
         .start(pageURL)
         .then(function() {
-            test.assert(this.getCurrentUrl() === pageURL, 'url is the one expected');
+            var msg = 'url is the one expected';
+            test.assert(this.getCurrentUrl() === pageURL, msg);
         })
         .then(function() {
             test.assertHttpStatus(200, pageURL + ' is up');
