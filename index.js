@@ -97,7 +97,7 @@ app.use(function(err, req, res, next) {
     res.status(err.status || 500);
     var context = {
         message: err.message,
-        error: {}
+        error: err
     };
     res.render(err.status, context);
 });
