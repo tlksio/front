@@ -1,5 +1,8 @@
 {
     /* Environment */
+    "globals": {
+        "casper": true
+    },
 
     // Define globals exposed by Node.js.
 	"node": true,
