@@ -70,11 +70,13 @@ app.get('/latest/:page', talkRoutes.latest);
 app.get('/profile/:username', userRoutes.profile);
 app.get('/profile/:username/upvoted', userRoutes.profileUpvoted);
 app.get('/profile/:username/favorited', userRoutes.profileFavorited);
-app.get('/profile/:username/settings', userRoutes.settings);
-app.post('/profile/:username/settings', userRoutes.settingsSave);
+app.route('/profile/:username/settings')
+    .get(userRoutes.settings)
+    .post(userRoutes.settingsSave);
 
-app.get('/talk/add', talkRoutes.add);
-app.post('/talk/add', talkRoutes.save);
+app.route('/talk/add')
+    .get(talkRoutes.add)
+    .post(talkRoutes.save);
 app.get('/talk/play/:slug', talkRoutes.play);
 app.get('/talk/favorite/:id', talkRoutes.favorite);
 app.get('/talk/unfavorite/:id', talkRoutes.unfavorite);
