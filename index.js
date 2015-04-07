@@ -1,3 +1,4 @@
+/*jshint unused:false*/
 var express = require('express');
 var session = require('express-session');
 var logger = require('express-logger');
@@ -23,8 +24,8 @@ app.use(logger({
 }));
 
 // add a favicon to the app
-var favicon_path = __dirname + '/public/img/favicon.png';
-app.use(favicon(favicon_path));
+var faviconPath = __dirname + '/public/img/favicon.png';
+app.use(favicon(faviconPath));
 
 // serve public assets from './public'
 app.use(serveStatic(__dirname + '/public'));
@@ -62,16 +63,20 @@ app.get('/auth/twitter', routes.authTwitter);
 app.get('/auth/twitter/callback', routes.authTwitterCallback);
 
 app.get('/popular', talkRoutes.popular);
+app.get('/popular/:page', talkRoutes.popular);
 app.get('/latest', talkRoutes.latest);
+app.get('/latest/:page', talkRoutes.latest);
 
 app.get('/profile/:username', userRoutes.profile);
 app.get('/profile/:username/upvoted', userRoutes.profileUpvoted);
 app.get('/profile/:username/favorited', userRoutes.profileFavorited);
-app.get('/profile/:username/settings', userRoutes.settings);
-app.post('/profile/:username/settings', userRoutes.settingsSave);
+app.route('/profile/:username/settings')
+    .get(userRoutes.settings)
+    .post(userRoutes.settingsSave);
 
-app.get('/talk/add', talkRoutes.add);
-app.post('/talk/add', talkRoutes.save);
+app.route('/talk/add')
+    .get(talkRoutes.add)
+    .post(talkRoutes.save);
 app.get('/talk/play/:slug', talkRoutes.play);
 app.get('/talk/favorite/:id', talkRoutes.favorite);
 app.get('/talk/unfavorite/:id', talkRoutes.unfavorite);
@@ -79,12 +84,25 @@ app.get('/talk/upvote/:id', talkRoutes.upvote);
 app.get('/talk/:slug', talkRoutes.talk);
 
 app.get('/tag/:tag', tagRoutes.tag);
+app.get('/tag/:tag/:page', tagRoutes.tag);
 
 app.get('/rss/latest', rssRoutes.latest);
 app.get('/rss/popular', rssRoutes.popular);
 app.get('/rss/tag/:tag', rssRoutes.tag);
 
 app.get('/search', talkRoutes.search);
+
+// production error handler : no stacktraces leaked to user
+app.use(function(err, req, res, next) {
+    'use strict';
+
+    res.status(err.status || 500);
+    var context = {
+        message: err.message,
+        error: err
+    };
+    res.render(err.status, context);
+});
 
 // start the HTTP server
 var server = app.listen(config.port, function() {

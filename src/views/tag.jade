@@ -12,7 +12,7 @@ html(lang="en")
         include partials/facebook.sdk.jade
         include partials/header.jade
 
-        //- Latest talks
+        //- Tagged talks
         .container.latest-talks
             .row
                 .col-xs-12.talk-list
@@ -22,6 +22,14 @@ html(lang="en")
                     each talk in talks
                         include ./partials/talk-list.item.jade
                         hr
+            nav
+                ul.pagination
+                    li
+                      a(href="/tag/" + tag + "/" + pagination.prev, aria-label='Previous')
+                        span(aria-hidden='true') &laquo; Prev
+                    li
+                      a(href="/tag/" + tag + "/" + pagination.next, aria-label='Next')
+                        span(aria-hidden='true') Next &raquo;
 
         include partials/footer.jade
         include partials/main.js.jade

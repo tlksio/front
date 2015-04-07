@@ -20,6 +20,14 @@ html(lang="en")
                     each talk in latest
                         include ./partials/talk-list.item.jade
                         hr
+            nav
+                ul.pagination
+                    li
+                      a(href="/latest/" + pagination.prev, aria-label='Previous')
+                        span(aria-hidden='true') &laquo; Prev
+                    li
+                      a(href="/latest/" + pagination.next, aria-label='Next')
+                        span(aria-hidden='true') Next &raquo;
 
         include partials/footer.jade
         include partials/main.js.jade
