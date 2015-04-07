@@ -1,3 +1,4 @@
+/*jshint unused:false*/
 var express = require('express');
 var session = require('express-session');
 var logger = require('express-logger');
@@ -88,6 +89,18 @@ app.get('/rss/popular', rssRoutes.popular);
 app.get('/rss/tag/:tag', rssRoutes.tag);
 
 app.get('/search', talkRoutes.search);
+
+// production error handler : no stacktraces leaked to user
+app.use(function(err, req, res, next) {
+    'use strict';
+
+    res.status(err.status || 500);
+    var context = {
+        message: err.message,
+        error: {}
+    };
+    res.render(err.status, context);
+});
 
 // start the HTTP server
 var server = app.listen(config.port, function() {

@@ -2,7 +2,8 @@
     /* Environment */
     "globals": {
         "casper": true,
-        "__utils__": true
+        "__utils__": true,
+        "next": true
     },
 
     // Define globals exposed by Node.js.
