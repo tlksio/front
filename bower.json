@@ -1,7 +1,7 @@
 {
   "name": "front",
   "main": "index.js",
-  "version": "0.0.7",
+  "version": "0.0.62",
   "homepage": "https://github.com/tlksio/front",
   "authors": [
     "Raül Pérez <repejota@gmail.com>"
