@@ -1,4 +1,4 @@
-var pageURL = "http://tlks.io/terms";
+var pageURL = 'http://tlks.io/terms';
 
 exports.testTerms = function(test) {
     casper
@@ -10,8 +10,8 @@ exports.testTerms = function(test) {
             test.assertHttpStatus(200, pageURL + ' is up');
         })
         .then(function() {
-            var title = "tlks.io : Terms of service";
-            test.assertTitle(title, "title is the one expected");
+            var title = 'tlks.io : Terms of service';
+            test.assertTitle(title, 'title is the one expected');
         })
         .run(function() {
             test.done();
