@@ -21,5 +21,7 @@ casper.test.begin('Testing tlks.io : Popular talks', 3, popular.testPopular);
 casper.test.begin('Testing tlks.io : Latest talks', 3, latest.testLatest);
 
 casper.test.begin('Finish suite', 0, function() {
+    'use strict';
+
     casper.exit();
 });
