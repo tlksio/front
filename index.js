@@ -92,6 +92,12 @@ app.get('/rss/tag/:tag', rssRoutes.tag);
 
 app.get('/search', talkRoutes.search);
 
+app.get('*', function(req, res, next) {
+    var err = new Error();
+    err.status = 404;
+    next(err);
+});
+
 // production error handler : no stacktraces leaked to user
 app.use(function(err, req, res, next) {
     'use strict';
