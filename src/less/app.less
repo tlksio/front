@@ -1,23 +1,16 @@
-body {
-  font-family: 'Droid Serif', serif;
-}
+@import "mixins/radius";
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Oswald', sans-serif;
-}
-
-i.tag { color: #666 }
-
-.img-center {margin:0 auto;}
+@import "partials/fonts";
+@import "partials/common";
 
 .activity-list {
-  .event {
-    padding: 20px 0;
-    .created {
-        font-style: italic;
-        color: #999;
+    .event {
+        padding: 20px 0;
+        .created {
+            font-style: italic;
+            color: #999;
+        }
     }
-  }
 }
 
 .search-form {
@@ -29,82 +22,101 @@ i.tag { color: #666 }
 }
 
 .talk-view {
-  .tags {
-    display: inline;
-    padding-top: 25px;
-    .tag {
-      font-size: 1.25rem;
-      background-color: #ccc;
-      color: #666;
-      margin-right: 5px;
-      font-weight: normal;
+    .tags {
+        display: inline;
+        padding-top: 25px;
+        .tag {
+            font-size: 1.25rem;
+            background-color: #ccc;
+            color: #666;
+            margin-right: 5px;
+            font-weight: normal;
+        }
+        .tag:hover {
+            color: #333;
+        }
     }
-    .tag:hover {
-      color: #333;
+    .info {
+        i { margin-right: 10px; }
     }
-  }
-  .info {
-    i { margin-right: 10px; }
-  }
-  ul.share-buttons {
-    list-style: none;
-    padding: 0;
-    li {
-      display: inline;
-      padding-right: 10px;
+    ul.share-buttons {
+        list-style: none;
+        padding: 0;
+        li {
+            display: inline;
+            padding-right: 10px;
+        }
     }
-  }
 }
 
 .talk-list {
-  .talk {
-    margin: 35px 0;
-    .title {
-      margin-top: 0;
-      line-height: 3.2rem;
-    }
-    .thumb {
-      padding-left: 0;
-    }
-    .description {
-      font-size: 1.45rem;
-    }
-    .info {
-      padding-right: 0;
-      .votes {
-        button {
-          width: 100%;
+    .talk {
+        margin: 35px 0;
+        .title {
+            margin-top: 0;
+            line-height: 3.2rem;
         }
-      }
+        .thumb {
+            padding-left: 0;
+        }
+        .description {
+            font-size: 1.45rem;
+            text-align: justify;
+        }
+        .info {
+            .votes {
+                margin-left: 0;
+                button {
+                    width: 100%;
+                }
+            }
+            .stats {
+                margin-top: 20px;
+                margin-left: -10px;
+                color: #ccc;
+                a {
+                    color: #ccc;
+                }
+                i {
+                    font-size: 1.5em;
+                }
+                .favorite {
+                    cursor: pointer;
+                    i {
+                        color: #ccc;
+                    }
+                }
+                .unfavorite {
+                    cursor: pointer;
+                    i {
+                        color: #c0392b;
+                    }
+                }
+            }
+        }
+        .tags {
+            line-height: 2.5em;
+            .tag {
+                font-size: 1.25rem;
+                background-color: #ccc;
+                color: #666;
+                margin-right: 5px;
+                padding: 5px 8px;
+                line-height: 1.5rem;
+                .border-radius(2px);
+                text-decoration: none;
+            }
+            .tag:hover {
+                color: #333;
+            }
+        }
     }
-    .rates {
-      i {
-        padding-right: 10px;
-      }
-    }
-    .tags {
-      line-height: 2.5em;
-      .tag {
-        font-size: 1.25rem;
-        background-color: #ccc;
-        color: #666;
-        margin-right: 5px;
-        font-weight: normal;
-        padding: 5px;
-        line-height: 1.5rem;
-        -webkit-border-radius: 2px;
-        -moz-border-radius: 2px;
-        border-radius: 2px;
-      }
-      .tag:hover {
-        color: #333;
-      }
-    }
-  }
 }
 
-.error-details {
-    padding: 20px;
+.http-error {
+    .error-details {
+        padding: 20px;
+    }
 }
 
 .profile {
@@ -127,6 +139,13 @@ i.tag { color: #666 }
 
         }
     }
+    .lists-content {
+        .talk-list {
+            .margin-top-20 {
+                margin-top: 20px;
+            }
+        }
+    }
 }
 
 .about {
@@ -136,15 +155,10 @@ i.tag { color: #666 }
 }
 
 footer {
-  margin-bottom: 25px;
-
-  .menu {
-    li {
-      line-height: 1.5em;
+    margin-bottom: 25px;
+    .menu {
+        li {
+            line-height: 1.5em;
+        }
     }
-  }
-}
-
-.margin-top-20 {
-    margin-top: 20px;
 }
