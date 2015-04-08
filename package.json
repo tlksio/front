@@ -1,6 +1,6 @@
 {
   "name": "front",
-  "version": "0.0.65",
+  "version": "0.0.66",
   "description": "tlks.io front",
   "main": "index.js",
   "scripts": {
@@ -54,6 +54,7 @@
     "serve-static": "^1.8.1",
     "slug": "^0.8.0",
     "uuid": "^2.0.1",
+    "vhost": "^3.0.0",
     "xml": "^1.0.0"
   },
   "devDependencies": {

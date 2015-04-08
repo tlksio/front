@@ -33,8 +33,19 @@ html(lang="en")
                     if posted.length
                         for talk in posted
                             include ./partials/talk-list.item.jade
+                            hr
+
+                        nav
+                            ul.pagination
+                                li
+                                  a(href="/profile/" + profile.username + '/' + pagination.prev, aria-label='Previous')
+                                    span(aria-hidden='true') &laquo; Prev
+                                li
+                                  a(href="/profile/" + profile.username + '/' + pagination.next, aria-label='Next')
+                                    span(aria-hidden='true') Next &raquo;
+
                     else
-                        p.margin-top-20.text-center You don't have any talks published. 
+                        p.margin-top-20.text-center You don't have any talks published.
                             a(href="/talk/add") Publish now!
 
         include partials/footer.jade
