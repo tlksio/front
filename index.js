@@ -5,6 +5,7 @@ var logger = require('express-logger');
 var favicon = require('serve-favicon');
 var serveStatic = require('serve-static');
 var bodyParser = require('body-parser');
+var compress = require('compression');
 
 var config = require('./config.json');
 var routes = require('./lib/routes');
@@ -28,7 +29,11 @@ var faviconPath = __dirname + '/public/img/favicon.png';
 app.use(favicon(faviconPath));
 
 // serve public assets from './public'
-app.use(serveStatic(__dirname + '/public'));
+// caching by default for one day
+var oneDay = 86400000;
+app.use(serveStatic(__dirname + '/public', {
+    maxAge: oneDay
+}));
 
 // use jade as a template engine
 app.set('view engine', 'jade');
@@ -46,6 +51,9 @@ app.use(session({
     resave: false,
     saveUninitialized: true
 }));
+
+// use gzip compression
+app.use(compress());
 
 // routes
 app.get('/', routes.index);
