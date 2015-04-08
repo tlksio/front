@@ -1,8 +1,39 @@
+var path = require('path');
 var gulp = require('gulp');
 var jshint = require('gulp-jshint');
 var csslint = require('gulp-csslint');
+var minifyCSS = require('gulp-minify-css');
+var sourcemaps = require('gulp-sourcemaps');
 var less = require('gulp-less');
 var phantom = require('gulp-phantom');
+var del = require('del');
+
+gulp.task('dist-clean', ['clean'], function() {
+    'use strict';
+
+    del([
+        'node_modules',
+        'coverage',
+        'public/components'
+    ], function(err, delfiles) {
+        if (err) {
+            return err;
+        }
+        return delfiles;
+    });
+});
+
+gulp.task('clean', function() {
+    'use strict';
+
+    var dest = path.join(__dirname, 'public', 'css', 'app.css');
+    del([dest, 'log'], function(err, delfiles) {
+        if (err) {
+            return err;
+        }
+        return delfiles;
+    });
+});
 
 gulp.task('csslint', function() {
     'use strict';
@@ -10,6 +41,17 @@ gulp.task('csslint', function() {
     return gulp.src('./public/css/**/*.css')
         .pipe(csslint())
         .pipe(csslint.reporter());
+});
+
+gulp.task('minify-css', ['less'], function() {
+    'use strict';
+
+    return gulp.src('./public/css/app.css')
+        .pipe(sourcemaps.init())
+        .pipe(minifyCSS({
+            keepBreaks: true
+        }))
+        .pipe(gulp.dest('./public/css'));
 });
 
 gulp.task('jshint', function() {
@@ -29,9 +71,12 @@ gulp.task('jshint', function() {
 gulp.task('less', function() {
     'use strict';
 
-    return gulp.src('./src/less/**/*.less')
-        .pipe(less({}))
-        .pipe(gulp.dest('./public/css'));
+    var dest = path.join(__dirname, 'public', 'css');
+    return gulp.src('./src/less/*.less')
+        .pipe(less({
+            paths: [path.join(__dirname, 'src', 'less')]
+        }))
+        .pipe(gulp.dest(dest));
 });
 
 gulp.task('phantom', function() {
@@ -42,4 +87,10 @@ gulp.task('phantom', function() {
         .pipe(gulp.dest('./test'));
 });
 
-gulp.task('default', ['jshint', 'less', 'csslint'], function() {});
+gulp.task('default', [
+    'clean',
+    'jshint',
+    'less',
+    'csslint',
+    'minify-css'
+], function() {});

@@ -9,20 +9,18 @@ html(lang="en")
     body
         include partials/facebook.sdk.jade
         include partials/header.jade
-        .container
+
+        .container.http-error
             .row
                 .col-xs-12.text-center
                     h1 Oops!
                     h2 HTTP 401 : Unauthorized
-                    .container
-                        .row.error-details
-                            .col-xs-12
-                                span Sorry, authentication is required and has failed or has not yet been provided.
-                                //- if message
-                                    .clearfix
-                                    span= message
+                    .row.error-details
+                        .col-xs-12
+                            span Sorry, authentication is required and has failed or has not yet been provided.
                     .row.error-actions
                         .col-xs-4
+                            //- nothing
                         .col-xs-2
                             a.btn.btn-primary(href="/")
                                 span.glyphicon.glyphicon-home
@@ -34,6 +32,8 @@ html(lang="en")
                                 span #{" "}
                                 span Login
                         .col-xs-4
+                            //- nothing
+
         include partials/footer.jade
         include partials/main.js.jade
         include partials/google.analytics.jade
