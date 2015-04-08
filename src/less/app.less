@@ -61,21 +61,37 @@
         }
         .description {
             font-size: 1.45rem;
+            text-align: justify;
         }
         .info {
-            padding-right: 0;
             .votes {
+                margin-left: 0;
                 button {
                     width: 100%;
                 }
             }
-        }
-        .rates {
-            i {
-                padding-right: 10px;
-            }
-            a {
-                text-decoration: none;
+            .stats {
+                margin-top: 20px;
+                margin-left: -10px;
+                color: #ccc;
+                a {
+                    color: #ccc;
+                }
+                i {
+                    font-size: 1.5em;
+                }
+                .favorite {
+                    cursor: pointer;
+                    i {
+                        color: #ccc;
+                    }
+                }
+                .unfavorite {
+                    cursor: pointer;
+                    i {
+                        color: #c0392b;
+                    }
+                }
             }
         }
         .tags {

@@ -39,8 +39,9 @@ gulp.task('csslint', function() {
     'use strict';
 
     return gulp.src('./public/css/**/*.css')
-        .pipe(csslint())
-        .pipe(csslint.reporter());
+        .pipe(csslint('.csslintrc'))
+        .pipe(csslint.reporter())
+        .pipe(csslint.failReporter());
 });
 
 gulp.task('minify-css', ['less'], function() {
@@ -49,7 +50,7 @@ gulp.task('minify-css', ['less'], function() {
     return gulp.src('./public/css/app.css')
         .pipe(sourcemaps.init())
         .pipe(minifyCSS({
-            keepBreaks: true
+            //keepBreaks: true
         }))
         .pipe(gulp.dest('./public/css'));
 });
