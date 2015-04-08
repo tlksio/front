@@ -28,7 +28,9 @@ var faviconPath = __dirname + '/public/img/favicon.png';
 app.use(favicon(faviconPath));
 
 // serve public assets from './public'
-app.use(serveStatic(__dirname + '/public'));
+// caching by default for one day
+var oneDay = 86400000;
+app.use(serveStatic(__dirname + '/public', { maxAge: oneDay }));
 
 // use jade as a template engine
 app.set('view engine', 'jade');
