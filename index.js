@@ -76,6 +76,7 @@ app.get('/latest', talkRoutes.latest);
 app.get('/latest/:page', talkRoutes.latest);
 
 app.get('/profile/:username', userRoutes.profile);
+app.get('/profile/:username/:page', userRoutes.profile);
 app.get('/profile/:username/upvoted', userRoutes.profileUpvoted);
 app.get('/profile/:username/favorited', userRoutes.profileFavorited);
 app.route('/profile/:username/settings')
