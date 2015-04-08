@@ -29,7 +29,7 @@ html(lang="en")
                             a(href="/profile/" + profile.username + "/upvoted") Upvoted
                         li(role="favorited")
                             a(href="/profile/" + profile.username + "/favorited") Favorited
-            .row
+            .row.lists-content
                 .col-xs-12.talk-list
                     if upvoted.length
                         for talk in upvoted

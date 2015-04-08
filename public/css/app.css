@@ -9,11 +9,11 @@ h5,
 h6 {
   font-family: 'Oswald', sans-serif;
 }
-i.tag {
-  color: #666666;
-}
 .img-center {
   margin: 0 auto;
+}
+i.tag {
+  color: #666666;
 }
 .activity-list .event {
   padding: 20px 0;
@@ -111,6 +111,9 @@ i.tag {
   font-size: 1.5em;
   line-height: 1.4em;
 }
+.profile .lists-content .talk-list .margin-top-20 {
+  margin-top: 20px;
+}
 .about p {
   font-size: 1.2em;
 }
@@ -119,7 +122,4 @@ footer {
 }
 footer .menu li {
   line-height: 1.5em;
-}
-.margin-top-20 {
-  margin-top: 20px;
 }
