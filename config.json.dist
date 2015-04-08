@@ -1,4 +1,5 @@
 {
+    "vhost": "example.com",
     "port": 80,
     "twitterCallbackURL": "http://tlks.local/auth/twitter/callback",
     "mongodb": "mongodb://xxxxx:xxxxxx@xxxxx.mongolab.com:43180/tlksio",
