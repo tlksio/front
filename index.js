@@ -75,9 +75,9 @@ router.get('/auth/twitter', routes.authTwitter);
 router.get('/auth/twitter/callback', routes.authTwitterCallback);
 
 router.get('/popular', talkRoutes.popular);
-router.get('/popular/:page', talkRoutes.popular);
+router.get('/popular/page/:page', talkRoutes.popular);
 router.get('/latest', talkRoutes.latest);
-router.get('/latest/:page', talkRoutes.latest);
+router.get('/latest/page/:page', talkRoutes.latest);
 
 router.get('/profile/:username', userRoutes.profile);
 router.get('/profile/:username/:page', userRoutes.profile);
