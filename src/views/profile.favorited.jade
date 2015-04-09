@@ -33,6 +33,15 @@ html(lang="en")
                     if favorited.length
                         for talk in favorited
                             include ./partials/talk-list.item.jade
+
+                        nav
+                            ul.pagination
+                                li
+                                    a(href="/profile/" + profile.username + '/favorited/page/' + pagination.prev, aria-label='Previous')
+                                        span(aria-hidden='true') &laquo; Prev
+                                li
+                                    a(href="/profile/" + profile.username + '/favorited/page/' + pagination.next, aria-label='Next')
+                                        span(aria-hidden='true') Next &raquo;
                     else
                         div.margin-top-20.text-center You still not favorited any talk!
 
