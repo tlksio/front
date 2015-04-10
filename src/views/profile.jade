@@ -27,7 +27,7 @@ html(lang="en")
                         li(role="upvoted")
                             a(href="/profile/" + profile.username + "/upvoted") Upvoted
                         li(role="favorited")
-                            a(href="/favorited/" + profile.username + "/favorited") Favorited
+                            a(href="/profile/" + profile.username + "/favorited") Favorited
             .row.lists-content
                 .col-xs-12.talk-list
                     if posted.length
@@ -38,10 +38,10 @@ html(lang="en")
                         nav
                             ul.pagination
                                 li
-                                  a(href="/profile/" + profile.username + '/' + pagination.prev, aria-label='Previous')
+                                  a(href="/profile/" + profile.username + '/published/page/' + pagination.prev, aria-label='Previous')
                                     span(aria-hidden='true') &laquo; Prev
                                 li
-                                  a(href="/profile/" + profile.username + '/' + pagination.next, aria-label='Next')
+                                  a(href="/profile/" + profile.username + '/published/page/' + pagination.next, aria-label='Next')
                                     span(aria-hidden='true') Next &raquo;
 
                     else
