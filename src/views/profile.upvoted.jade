@@ -26,9 +26,9 @@ html(lang="en")
                         li(role="posted")
                             a(href="/profile/" + profile.username) Posted
                         li.active(role="upvoted")
-                            a(href="/profile/" + profile.username + "/page/" + pagination.page + "/upvoted") Upvoted
+                            a(href="/profile/" + profile.username + "/upvoted") Upvoted
                         li(role="favorited")
-                            a(href="/profile/" + profile.username + "/page/" + pagination.page + "/favorited") Favorited
+                            a(href="/profile/" + profile.username + "/favorited") Favorited
             .row.lists-content
                 .col-xs-12.talk-list
                     if upvoted.length
