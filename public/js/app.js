@@ -7,6 +7,9 @@
     // $ locally scoped
     $(function() {
         // DOM ready
+        $('.js-vote-anon').click(function() {
+            console.log('overlay');
+        });
         $('.js-vote').click(function() {
             var url = '/talk/upvote/' + $(this).data('id');
             $.ajax({

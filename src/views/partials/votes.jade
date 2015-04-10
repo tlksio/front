@@ -10,7 +10,7 @@
                     i.glyphicon.glyphicon-chevron-up
                     .counter= talk.voteCount
         - else
-            button.btn.btn-primary(type="button", disabled="disabled")
+            button.btn.btn-primary.js-vote-anon(type="button", data-toggle="modal", data-target="#voteAnon")
                 i.glyphicon.glyphicon-chevron-up
                 .counter= talk.voteCount
     .row.stats
