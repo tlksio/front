@@ -85,7 +85,8 @@ router.get('/profile/:username/published/page/:page', userRoutes.profile);
 router.get('/profile/:username/upvoted', userRoutes.profileUpvoted);
 router.get('/profile/:username/upvoted/page/:page', userRoutes.profileUpvoted);
 router.get('/profile/:username/favorited', userRoutes.profileFavorited);
-router.get('/profile/:username/favorited/page/:page', userRoutes.profileFavorited);
+router.get('/profile/:username/favorited/page/:page',
+    userRoutes.profileFavorited);
 router.route('/profile/:username/settings')
     .get(userRoutes.settings)
     .post(userRoutes.settingsSave);
