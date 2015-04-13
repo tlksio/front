@@ -6,5 +6,7 @@
             form.form-inline(method="get", action="/search")
                 .form-group(style="display:table;")
                     input.form-control.input-lg.search-string(type="search", name="q", id="q", placeholder="Search talks", autofocus="autofocus", autocomplete="off", value=q)
-                    span.input-group-addon(style="width: 1%;")
-                        i.fa.fa-search
+                    span.input-group-btn.input-group-addon
+                        button.btn.btn-defaultn(type="submit")
+                            i.fa.fa-search
+
