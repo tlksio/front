@@ -65,7 +65,7 @@ gulp.task('jshint', function() {
             'gulpfile.js'
         ])
         .pipe(jshint())
-        .pipe(jshint.reporter('jshint-stylish'))
+        .pipe(jshint.reporter('jshint-reporter-jscs'))
         .pipe(jshint.reporter('fail'));
 });
 
