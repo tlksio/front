@@ -1,6 +1,6 @@
 {
   "name": "front",
-  "version": "0.0.71",
+  "version": "0.0.72",
   "description": "tlks.io front",
   "main": "index.js",
   "scripts": {
@@ -71,6 +71,7 @@
     "gulp-sourcemaps": "^1.5.1",
     "gulp-uglify": "^1.1.0",
     "istanbul": "^0.3.13",
+    "jshint-reporter-jscs": "^0.1.0",
     "jshint-stylish": "^1.0.1",
     "mocha": "^2.1.0",
     "should": "^5.2.0"
