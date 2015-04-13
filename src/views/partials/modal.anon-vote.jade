@@ -1,7 +1,9 @@
-.modal.fade(id="voteAnon", tabindex="-1", role="dialog", aria-hidden="true")
+.modal.fade.voteAnon(tabindex="-1", role="dialog", aria-labelledby="voteAnonLabel", aria-hidden="true")
     .modal-dialog
         .modal-content
-            .modal-body
-                span foooo
-            .modal-footer
-                button.btn.btn-default(type="button", data-dimiss="modal") Close
+            .row.text-center
+                h1 Sign in to upvote
+                h4 Please sign in to upvote this talk
+                hr
+                a.btn.btn-primary.btn-lg.btn-block(href="/auth/twitter", type="button") Login with Twitter
+
