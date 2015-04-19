@@ -1,0 +1,19 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="utf-8")
+        title= title
+        include partials/google.webmastertools.jade
+        include partials/main.css.jade
+    body
+        include partials/facebook.sdk.jade
+        include partials/header.jade
+        .container
+            .row
+                .col-xs-12
+                    h1 Contact Us
+                    hr
+
+        include partials/footer.jade
+        include partials/main.js.jade
+        include partials/google.analytics.jade
