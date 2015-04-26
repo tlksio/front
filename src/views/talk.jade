@@ -21,7 +21,7 @@ html(lang="en")
                     .row
                         .col-xs-8
                             .embed-responsive.embed-responsive-16by9
-                                iframe.embed-responsive-item(src="https://www.youtube.com/embed/" + talk.code)
+                                #youtube-player
                         include partials/votes.jade
                     .row
                         .col-xs-12
@@ -46,3 +46,5 @@ html(lang="en")
         include partials/footer.jade
         include partials/main.js.jade
         include partials/google.analytics.jade
+        include partials/google.youtube.jade
+        include inline-js/talk.js.jade

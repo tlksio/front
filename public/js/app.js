@@ -22,6 +22,7 @@
                     }
                 },
             });
+            ga('send', 'event', 'button', 'vote', 'upvote');
         });
         $('.favorite, .unfavorite').click(function() {
             var cmd = $(this).hasClass('favorite') ? 'favorite' : 'unfavorite';
@@ -37,6 +38,10 @@
                     }
                 },
             });
+            ga('send', 'event', 'button', 'favorite', cmd);
+        });
+        $('.js-vote-anon').click(function() {
+            ga('send', 'event', 'button', 'vote', 'vote-anon');
         });
     });
     // DOM not ready
