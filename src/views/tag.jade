@@ -8,6 +8,10 @@ html(lang="en")
         include partials/main.css.jade
         link(rel="shortcut icon", href="/img/favicon.png")
         link(rel="alternate", type="application/rss+xml", href="http://tlks.io/rss/tag/" + tag, title="RSS 2.0 Latest Talks")
+        //- Meta canonical for pagination
+        link(rel="canonical", href="http://tlks.io/tag/" + tag + "/page/" + pagination.page)
+        link(rel="next", href="http://tlks.io/tag/" + tag + "/page/" + pagination.next)
+        link(rel="prev", href="http://tlks.io/tag/" + tag + "/page/" + pagination.prev)
     body
         include partials/facebook.sdk.jade
         include partials/header.jade
@@ -25,10 +29,10 @@ html(lang="en")
             nav
                 ul.pagination
                     li
-                      a(href="/tag/" + tag + "/" + pagination.prev, aria-label='Previous')
+                      a(href="/tag/" + tag + "/page/" + pagination.prev, aria-label='Previous')
                         span(aria-hidden='true') &laquo; Prev
                     li
-                      a(href="/tag/" + tag + "/" + pagination.next, aria-label='Next')
+                      a(href="/tag/" + tag + "/page/" + pagination.next, aria-label='Next')
                         span(aria-hidden='true') Next &raquo;
 
         include partials/footer.jade

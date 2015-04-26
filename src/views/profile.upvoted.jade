@@ -6,6 +6,11 @@ html(lang="en")
         include partials/google.webmastertools.jade
         include partials/main.css.jade
         link(rel="shortcut icon", href="/img/favicon.png")
+        //- Meta canonical for pagination
+        link(rel="canonical", href="http://tlks.io/profile/" + profile.username + "/upvoted/page/" + pagination.page)
+        link(rel="next", href="http://tlks.io/profile/" + profile.username + "/upvoted/page/" + pagination.next)
+        link(rel="prev", href="http://tlks.io/profile/" + profile.username + "/upvoted/page/" + pagination.prev)
+
     body
         include partials/facebook.sdk.jade
         include partials/header.jade
@@ -37,10 +42,10 @@ html(lang="en")
                         nav
                             ul.pagination
                                 li
-                                    a(href="/profile/" + profile.username + '/favorited/page/' + pagination.prev, aria-label='Previous')
+                                    a(href="/profile/" + profile.username + '/upvoted/page/' + pagination.prev, aria-label='Previous')
                                         span(aria-hidden='true') &laquo; Prev
                                 li
-                                    a(href="/profile/" + profile.username + '/favorited/page/' + pagination.next, aria-label='Next')
+                                    a(href="/profile/" + profile.username + '/upvoted/page/' + pagination.next, aria-label='Next')
                                         span(aria-hidden='true') Next &raquo;
                     else
                         div.margin-top-20.text-center You didn't upvoted any talk yet!
