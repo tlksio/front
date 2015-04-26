@@ -6,6 +6,11 @@ html(lang="en")
         include partials/google.webmastertools.jade
         include partials/main.css.jade
         link(rel="shortcut icon", href="/img/favicon.png")
+        //- Meta canonical for pagination
+        link(rel="canonical", href="http://tlks.io/profile/" + profile.username + "/published/page/" + pagination.page)
+        link(rel="next", href="http://tlks.io/profile/" + profile.username + "/published/page/" + pagination.next)
+        link(rel="prev", href="http://tlks.io/profile/" + profile.username + "/published/page/" + pagination.prev)
+
     body
         include partials/facebook.sdk.jade
         include partials/header.jade
