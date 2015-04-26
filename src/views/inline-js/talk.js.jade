@@ -1,0 +1,17 @@
+script(type="text/javascript")
+    | ga('send', 'event', 'impression', 'talk', '#{talk.slug}');
+    | var youtubePlayer,
+    |     youtubeVideoTracked = false;
+    | function onYouTubeIframeAPIReady() {
+    |     youtubePlayer = new YT.Player('youtube-player', {
+    |         videoId: '#{talk.code}',
+    |         events: { onStateChange: onYoutubePlayerStateChange }
+    |     });
+    | }
+    | function onYoutubePlayerStateChange(event) {
+    |     if (event.data == YT.PlayerState.PLAYING && !youtubeVideoTracked) {
+    |         ga('send', 'event', 'play', 'talk', '#{talk.slug}');
+    |         ga('send', 'event', 'play', 'youtube', '#{talk.code}');
+    |         youtubeVideoTracked = true;
+    |     }
+    | }
