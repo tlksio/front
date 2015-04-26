@@ -7,6 +7,10 @@ html(lang="en")
         include partials/main.css.jade
         link(rel="shortcut icon", href="/img/favicon.png")
         link(rel="alternate", type="application/rss+xml", href="http://tlks.io/rss/popular", title="RSS 2.0 Latest Talks")
+        //- Meta canonical for pagination
+        link(rel="canonical", href="http://tlks.io/popular/page/" + pagination.page)
+        link(rel="next", href="http://tlks.io/popular/page/" + pagination.next)
+        link(rel="prev", href="http://tlks.io/popular/page/" + pagination.prev)
     body
         include partials/facebook.sdk.jade
         include partials/header.jade

@@ -102,7 +102,7 @@ router.get('/talk/upvote/:id', talkRoutes.upvote);
 router.get('/talk/:slug', talkRoutes.talk);
 
 router.get('/tag/:tag', tagRoutes.tag);
-router.get('/tag/:tag/:page', tagRoutes.tag);
+router.get('/tag/:tag/page/:page', tagRoutes.tag);
 
 router.get('/rss/latest', rssRoutes.latest);
 router.get('/rss/popular', rssRoutes.popular);
