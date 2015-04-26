@@ -68,6 +68,7 @@ router.get('/terms', legalRoutes.terms);
 
 router.get('/about', appRoutes.about);
 router.get('/faq', appRoutes.faq);
+router.get('/contactus', appRoutes.contactus);
 
 router.get('/auth/login', routes.login);
 router.get('/auth/logout', routes.authLogout);

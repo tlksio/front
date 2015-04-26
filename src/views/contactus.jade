@@ -1,0 +1,24 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="utf-8")
+        title= title
+        include partials/google.webmastertools.jade
+        include partials/main.css.jade
+    body
+        include partials/facebook.sdk.jade
+        include partials/header.jade
+        .container
+            .row
+                .col-xs-12
+                    h1 Contact Us
+                    hr
+                    p Something is not working fine? Do you think you've found a bug? Please
+                        span= " "
+                        a(href="https://github.com/tlksio/front/issues") file an issue
+                        span= " "
+                        span on our GitHub project!
+
+        include partials/footer.jade
+        include partials/main.js.jade
+        include partials/google.analytics.jade
