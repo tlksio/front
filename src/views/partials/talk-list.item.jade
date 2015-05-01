@@ -1,10 +1,10 @@
-.row.talk
+.row.talk(itemscope, itemtype="http://schema.org/Article")
     .col-xs-2.thumb
         a(href="/talk/play/" + talk.slug)
-            img.img-responsive.img-circle.thumbnail(src="http://img.youtube.com/vi/" + talk.code + "/mqdefault.jpg", title=talk.title)
+            img.img-responsive.img-circle.thumbnail(src="http://img.youtube.com/vi/" + talk.code + "/mqdefault.jpg", title=talk.title, itemprop="image")
     .col-xs-9.content
-        h3.title: a(href="/talk/" + talk.slug)= talk.title
-        p.description= talk.description
+        h3.title(itemprop="name"): a(href="/talk/" + talk.slug)= talk.title
+        p.description(itemprop="articleBody")= talk.description
         .tags
             each tag in talk.tags
                 a.tag(href="/tag/" + encodeURIComponent(tag))= tag
