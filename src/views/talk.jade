@@ -16,8 +16,8 @@ html(lang="en")
         include partials/header.jade
         .container
             .row
-                .col-xs-12.talk-view
-                    h2= talk.title
+                .col-xs-12.talk-view(itemscope, itemtype="http://schema.org/Article")
+                    h2(itemprop="name")= talk.title
                     hr
                     .row
                         .col-xs-8
@@ -26,7 +26,7 @@ html(lang="en")
                         include partials/votes.jade
                     .row
                         .col-xs-12
-                            p= talk.description
+                            p(itemprop="articleBody")= talk.description
                     .row
                         .col-xs-10.tags
                             each tag in talk.tags
