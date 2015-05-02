@@ -8,5 +8,6 @@
         .tags
             each tag in talk.tags
                 a.tag(href="/tag/" + encodeURIComponent(tag))= tag
-    include votes.jade
+    .col-xs-1
+        include votes.jade
 
