@@ -21,8 +21,11 @@ html(lang="en")
                     hr
                     .row
                         .col-xs-8
-                            .embed-responsive.embed-responsive-16by9
-                                #youtube-player
+                            if talk.type =="youtube"
+                                .embed-responsive.embed-responsive-16by9
+                                    #youtube-player
+                            else if talk.type=="vimeo"
+                                include partials/vimeo-player.jade
                         .col-xs-4
                             include partials/votes.detail.jade
                             hr
