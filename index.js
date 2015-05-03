@@ -7,6 +7,7 @@ var serveStatic = require('serve-static');
 var bodyParser = require('body-parser');
 var compress = require('compression');
 var vhost = require('vhost');
+var csrf = require('csurf');
 
 var config = require('./config.json');
 var routes = require('./lib/routes');
@@ -56,6 +57,10 @@ router.use(session({
     saveUninitialized: true
 }));
 
+
+// use CSRF protection middleware
+router.use(csrf());
+
 // use gzip compression
 router.use(compress());
 
@@ -95,6 +100,7 @@ router.route('/profile/:username/settings')
 router.route('/talk/add')
     .get(talkRoutes.add)
     .post(talkRoutes.save);
+
 router.get('/talk/play/:slug', talkRoutes.play);
 router.get('/talk/favorite/:id', talkRoutes.favorite);
 router.get('/talk/unfavorite/:id', talkRoutes.unfavorite);

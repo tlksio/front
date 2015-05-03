@@ -30,7 +30,8 @@ html(lang="en")
                         .form-group
                             label(for="tags") Tags
                             input.form-control(type="text", name="tags", id="tags", placeholder="tag1, tag2, ...")
-
+                        .form-group
+                            input.form-control(type="hidden", name="_csrf" value=csrfToken)
                         button.btn.btn-primary(type="submit") Submit
 
 
