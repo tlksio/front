@@ -1,8 +1,9 @@
 {
+    "vhost": "example.com",
     "port": 80,
-    "twitter_callback_url": "http://talks.local/auth/twitter/callback",
-    "mongodb": "mongodb://dbuser:dbpass@xxxxx.mongolab.com:43180/tlksio",
-    "elasticsearch": "https://dbuser:dbpass@xxxxx.bonsai.io",
+    "twitterCallbackURL": "http://tlks.local/auth/twitter/callback",
+    "mongodb": "mongodb://xxxxx:xxxxxx@xxxxx.mongolab.com:43180/tlksio",
+    "elasticsearch": "https://xxxxx:xxxxx@xxxxx.bonsai.io",
     "twitterConsumerKey": "xxxx",
     "twitterConsumerSecret": "xxxx"
 }

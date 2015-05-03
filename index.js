@@ -1,9 +1,12 @@
+/*jshint unused:false*/
 var express = require('express');
 var session = require('express-session');
 var logger = require('express-logger');
 var favicon = require('serve-favicon');
 var serveStatic = require('serve-static');
 var bodyParser = require('body-parser');
+var compress = require('compression');
+var vhost = require('vhost');
 
 var config = require('./config.json');
 var routes = require('./lib/routes');
@@ -17,74 +20,119 @@ var rssRoutes = require('./lib/routes/rss.js');
 // express.js application
 var app = express();
 
-// using a simple logger
-app.use(logger({
-    path: "./log/app.log"
-}));
-
-// add a favicon to the app
-var favicon_path = __dirname + '/public/img/favicon.png';
-app.use(favicon(favicon_path));
-
-// serve public assets from './public'
-app.use(serveStatic(__dirname + '/public'));
-
 // use jade as a template engine
 app.set('view engine', 'jade');
 app.set('views', __dirname + '/src/views');
 
+//  express.js router class
+var router = express.Router();
+
+// using a simple logger
+router.use(logger({
+    path: "./log/app.log"
+}));
+
+// add a favicon to the app
+var faviconPath = __dirname + '/public/img/favicon.png';
+router.use(favicon(faviconPath));
+
+// serve public assets from './public'
+// caching by default for one day
+var oneDay = 86400000;
+router.use(serveStatic(__dirname + '/public', {
+    maxAge: oneDay
+}));
+
 // parse body payloads
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({
+router.use(bodyParser.json());
+router.use(bodyParser.urlencoded({
     extended: true
 }));
 
 // this express.js app use sessions
-app.use(session({
+router.use(session({
     secret: 'keyboard cat',
     resave: false,
     saveUninitialized: true
 }));
 
+// use gzip compression
+router.use(compress());
+
 // routes
-app.get('/', routes.index);
-app.get('/activity', routes.activity);
+router.get('/', routes.index);
+router.get('/activity', routes.activity);
 
-app.get('/privacy', legalRoutes.privacy);
-app.get('/terms', legalRoutes.terms);
+router.get('/privacy', legalRoutes.privacy);
+router.get('/terms', legalRoutes.terms);
 
-app.get('/about', appRoutes.about);
-app.get('/faq', appRoutes.faq);
+router.get('/about', appRoutes.about);
+router.get('/faq', appRoutes.faq);
+router.get('/contactus', appRoutes.contactus);
 
-app.get('/auth/login', routes.login);
-app.get('/auth/logout', routes.authLogout);
-app.get('/auth/twitter', routes.authTwitter);
-app.get('/auth/twitter/callback', routes.authTwitterCallback);
+router.get('/auth/login', routes.login);
+router.get('/auth/logout', routes.authLogout);
+router.get('/auth/twitter', routes.authTwitter);
+router.get('/auth/twitter/callback', routes.authTwitterCallback);
 
-app.get('/popular', talkRoutes.popular);
-app.get('/latest', talkRoutes.latest);
+router.get('/popular', talkRoutes.popular);
+router.get('/popular/page/:page', talkRoutes.popular);
+router.get('/latest', talkRoutes.latest);
+router.get('/latest/page/:page', talkRoutes.latest);
 
-app.get('/profile/:username', userRoutes.profile);
-app.get('/profile/:username/upvoted', userRoutes.profileUpvoted);
-app.get('/profile/:username/favorited', userRoutes.profileFavorited);
-app.get('/profile/:username/settings', userRoutes.settings);
-app.post('/profile/:username/settings', userRoutes.settingsSave);
+router.get('/profile/:username', userRoutes.profile);
+router.get('/profile/:username/published', userRoutes.profile);
+router.get('/profile/:username/published/page/:page', userRoutes.profile);
+router.get('/profile/:username/upvoted', userRoutes.profileUpvoted);
+router.get('/profile/:username/upvoted/page/:page', userRoutes.profileUpvoted);
+router.get('/profile/:username/favorited', userRoutes.profileFavorited);
+router.get('/profile/:username/favorited/page/:page',
+    userRoutes.profileFavorited);
+router.route('/profile/:username/settings')
+    .get(userRoutes.settings)
+    .post(userRoutes.settingsSave);
 
-app.get('/talk/add', talkRoutes.add);
-app.post('/talk/add', talkRoutes.save);
-app.get('/talk/play/:slug', talkRoutes.play);
-app.get('/talk/favorite/:id', talkRoutes.favorite);
-app.get('/talk/unfavorite/:id', talkRoutes.unfavorite);
-app.get('/talk/upvote/:id', talkRoutes.upvote);
-app.get('/talk/:slug', talkRoutes.talk);
+router.route('/talk/add')
+    .get(talkRoutes.add)
+    .post(talkRoutes.save);
+router.get('/talk/play/:slug', talkRoutes.play);
+router.get('/talk/favorite/:id', talkRoutes.favorite);
+router.get('/talk/unfavorite/:id', talkRoutes.unfavorite);
+router.get('/talk/upvote/:id', talkRoutes.upvote);
+router.get('/talk/:slug', talkRoutes.talk);
 
-app.get('/tag/:tag', tagRoutes.tag);
+router.get('/tag/:tag', tagRoutes.tag);
+router.get('/tag/:tag/page/:page', tagRoutes.tag);
 
-app.get('/rss/latest', rssRoutes.latest);
-app.get('/rss/popular', rssRoutes.popular);
-app.get('/rss/tag/:tag', rssRoutes.tag);
+router.get('/rss/latest', rssRoutes.latest);
+router.get('/rss/popular', rssRoutes.popular);
+router.get('/rss/tag/:tag', rssRoutes.tag);
 
-app.get('/search', talkRoutes.search);
+router.get('/search', talkRoutes.search);
+
+// Default route
+router.get('*', function(req, res, next) {
+    'use strict';
+
+    var err = new Error();
+    err.status = 404;
+    next(err);
+});
+
+// production error handler : no stacktraces leaked to user
+router.use(function(err, req, res, next) {
+    'use strict';
+
+    res.status(err.status || 500);
+    var context = {
+        message: err.message,
+        error: err
+    };
+    res.render(err.status, context);
+});
+
+// which virtual hosts are we gonna use?
+app.use(vhost(config.vhost, router));
 
 // start the HTTP server
 var server = app.listen(config.port, function() {

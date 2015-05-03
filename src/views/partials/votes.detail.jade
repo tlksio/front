@@ -1,0 +1,23 @@
+.info(itemprop="aggregateRating", itemscope, itemtype="http://schema.org/AggregateRating")
+    .row
+        .col-xs-4.votes
+            - if (user != null)
+                - if (talk.votes.indexOf(user.id) != -1)
+                    button.btn.btn-primary(type="button", disabled="disabled")
+                        i.glyphicon.glyphicon-chevron-up
+                        .counter(itemprop="ratingCount")= talk.voteCount
+                - else
+                    button.btn.btn-primary.js-vote(type="button", data-id=talk.id)
+                        i.glyphicon.glyphicon-chevron-up
+                        .counter(itemprop="ratingCount")= talk.voteCount
+            - else
+                button.btn.btn-primary.js-vote-anon(type="button", data-toggle="modal", data-target=".voteAnon")
+                    i.glyphicon.glyphicon-chevron-up
+                    .counter(itemprop="ratingCount")= talk.voteCount
+        .col-xs-8.stats
+            .comments
+                i.fa.fa-play
+                span= talk.viewCount + " Plays"
+            .favorites
+                i.fa.fa-heart
+                span= talk.favoriteCount + " Favorites"

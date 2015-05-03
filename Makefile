@@ -1,20 +1,21 @@
-build:
+all:
 	./node_modules/.bin/gulp default
 
-dist-clean:
-	rm -rf node_modules
+clean:
+	./node_modules/.bin/gulp clean
 
-lint:
+dist-clean:
+	./node_modules/.bin/gulp dist-clean
+
+lint: lint
 	./node_modules/.bin/gulp jshint
 	./node_modules/.bin/gulp csslint
 
-less:
+less: clean
 	./node_modules/.bin/gulp less
-
-run: build
-	node .
+	./node_modules/.bin/gulp minify-css
 
 test:
 	npm test
 
-.PHONY: build dist-clean lint less run test
+.PHONY: all clean dist-clean lint less test

@@ -3,16 +3,21 @@ html(lang="en")
     head
         meta(charset="utf-8")
         title= title
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
         meta(description= description)
         include partials/google.webmastertools.jade
         include partials/main.css.jade
         link(rel="shortcut icon", href="/img/favicon.png")
         link(rel="alternate", type="application/rss+xml", href="http://tlks.io/rss/tag/" + tag, title="RSS 2.0 Latest Talks")
+        //- Meta canonical for pagination
+        link(rel="canonical", href="http://tlks.io/tag/" + tag + "/page/" + pagination.page)
+        link(rel="next", href="http://tlks.io/tag/" + tag + "/page/" + pagination.next)
+        link(rel="prev", href="http://tlks.io/tag/" + tag + "/page/" + pagination.prev)
     body
         include partials/facebook.sdk.jade
         include partials/header.jade
 
-        //- Latest talks
+        //- Tagged talks
         .container.latest-talks
             .row
                 .col-xs-12.talk-list
@@ -22,7 +27,16 @@ html(lang="en")
                     each talk in talks
                         include ./partials/talk-list.item.jade
                         hr
+            nav
+                ul.pagination
+                    li
+                      a(href="/tag/" + tag + "/page/" + pagination.prev, aria-label='Previous')
+                        span(aria-hidden='true') &laquo; Prev
+                    li
+                      a(href="/tag/" + tag + "/page/" + pagination.next, aria-label='Next')
+                        span(aria-hidden='true') Next &raquo;
 
         include partials/footer.jade
         include partials/main.js.jade
         include partials/google.analytics.jade
+        include inline-js/tag.js.jade

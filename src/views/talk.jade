@@ -3,6 +3,7 @@ html(lang="en")
     head
         meta(charset="utf-8")
         title= title
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
         meta(description= description)
         include partials/google.webmastertools.jade
         include partials/main.css.jade
@@ -15,26 +16,32 @@ html(lang="en")
         include partials/header.jade
         .container
             .row
-                .col-xs-12.talk-view
-                    h2= talk.title
+                .col-xs-12.talk-view(itemscope, itemtype="http://schema.org/Article")
+                    h2(itemprop="name")= talk.title
                     hr
                     .row
                         .col-xs-8
                             .embed-responsive.embed-responsive-16by9
-                                iframe.embed-responsive-item(src="https://www.youtube.com/embed/" + talk.code)
-                        include partials/votes.jade
+                                #youtube-player
+                        .col-xs-4
+                            include partials/votes.detail.jade
+                            hr
+                            a(href="/profile/"+talk.author.username)
+                                img.responsive.img-circle(src=""+talk.author.avatar, title="@"+talk.author.username, style="width: 32px")
+                            span= " "
+                            span.created= ""+moment(talk.created).format("MMMM Do YYYY, h:mm:ss a")
+
+
+                    hr
                     .row
                         .col-xs-12
-                            p= talk.description
+                            p(itemprop="articleBody")= talk.description
                     .row
                         .col-xs-10.tags
                             each tag in talk.tags
                                 a.label.label-default.tag(href="/tag/" + encodeURIComponent(tag))= tag
                     hr
-                    include ./partials/talk.like-facebook.jade
-                    include ./partials/talk.share-facebook.jade
-                    include ./partials/talk.share-twitter.jade
-                    include ./partials/talk.share-gplus.jade
+                    include ./partials/talk.share.jade
                     hr
                     include ./partials/talk.comments.jade
                         .tags
@@ -49,3 +56,5 @@ html(lang="en")
         include partials/footer.jade
         include partials/main.js.jade
         include partials/google.analytics.jade
+        include partials/google.youtube.jade
+        include inline-js/talk.js.jade

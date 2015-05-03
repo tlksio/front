@@ -3,6 +3,7 @@ html(lang="en")
     head
         meta(charset="utf-8")
         title= title
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
         meta(description= description)
         include partials/google.webmastertools.jade
         include partials/main.css.jade
@@ -12,17 +13,7 @@ html(lang="en")
         include partials/facebook.sdk.jade
         include partials/header.jade
 
-    .container.search-form
-        .row
-            .col-xs-12
-                h2 Search
-                hr
-                form.form-inline(method="get", action="/search")
-                    .form-group
-                        input.form-control.input-lg(type="search", name="q", id="q", placeholder="Search talks", value=""+q)
-                        button.btn.btn-primary.btn-lg(type="submit")
-                            i.fa.fa-search
-                            span Search
+        include partials/search-form.jade
 
         //- Latest talks
         .container.latest-talks
@@ -38,3 +29,4 @@ html(lang="en")
         include partials/footer.jade
         include partials/main.js.jade
         include partials/google.analytics.jade
+        include inline-js/search.js.jade
