@@ -41,6 +41,8 @@ html(lang="en")
                                 label(for="bio") Bio
                             .col-xs-10
                                 textarea.form-control(name="bio", id="bio")= user.bio
+                        .form-group
+                            input.form-control(type="hidden", name="_csrf" value=csrfToken)
                         .row
                             .col-xs-6.text-left
                                 a.btn.btn-danger(href="/") Cancel
