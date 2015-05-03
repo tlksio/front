@@ -4,3 +4,4 @@ log
 config.json
 test/*.txt
 .idea
+*.iml
