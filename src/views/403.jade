@@ -1,0 +1,41 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="utf-8")
+        title tlks.io : HTTP Error 403 : Forbidden
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        include partials/google.webmastertools.jade
+        include partials/main.css.jade
+        link(rel="shortcut icon", href="/img/favicon.png")
+    body
+        include partials/facebook.sdk.jade
+        include partials/header.jade
+
+        .container.http-error
+            .row
+                .col-xs-12.text-center
+                    h1 Oops!
+                    h2 HTTP 403 : Forbidden
+                    .row.error-details
+                        .col-xs-12
+                            span Sorry, access denied.
+                    .row.error-actions
+                        .col-xs-4
+                            //- nothing
+                        .col-xs-2
+                            a.btn.btn-primary(href="/")
+                                span.glyphicon.glyphicon-home
+                                span #{" "}
+                                span Home
+                        .col-xs-2
+                            a.btn.btn-default(href="/about")
+                                span.glyphicon.glyphicon-envelope
+                                span #{" "}
+                                span Support
+                        .col-xs-4
+                            //- nothing
+
+        include partials/footer.jade
+        include partials/main.js.jade
+        include partials/google.analytics.jade
+        include inline-js/cookiechoices.js.jade
