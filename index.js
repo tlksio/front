@@ -25,6 +25,15 @@ var app = express();
 app.set('view engine', 'jade');
 app.set('views', __dirname + '/src/views');
 
+// error handler
+app.use(function (err, req, res, next) {
+    if (err.code !== 'EBADCSRFTOKEN') return next(err);
+
+    // handle CSRF token errors here
+    res.status(403);
+    res.send('invalid CSRF token');
+});
+
 //  express.js router class
 var router = express.Router();
 
