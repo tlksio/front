@@ -19,5 +19,16 @@
                 i.fa.fa-play
                 span= talk.viewCount + " Plays"
             .favorites
-                i.fa.fa-heart
-                span= talk.favoriteCount + " Favorites"
+                - if (user != null)
+                    - if (talk.favorites.indexOf(user.id) != -1)
+                        .heart.unfavorite(data-id=talk.id, data-count=talk.favoriteCount)
+                            i.fa.fa-heart.red
+                            span= talk.favoriteCount + " Favorites"
+                    - else
+                        .heart.favorite(data-id=talk.id, data-count=talk.favoriteCount)
+                            i.fa.fa-heart
+                            span= talk.favoriteCount + " Favorites"
+                - else
+                    .heart
+                        i.fa.fa-heart
+                        span= talk.favoriteCount + " Favorites"
