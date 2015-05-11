@@ -19,8 +19,17 @@ html(lang="en")
                             label(for="code") Video URL
                             .input-group
                                 .input-group-addon
-                                    i.fa.fa-youtube-square
-                                input.form-control(type="text", name="code", id="code", placeholder="YouTube or Vimeo URL")
+                                    i.fa.fa-video-camera
+                                input.form-control(type="text", name="code", id="code", placeholder="Video URL from the services listed below..")
+                            blockquote.col-xs-12
+                                p
+                                    i.fa.fa-youtube
+                                    span &nbsp; Youtube
+                                    em.small https://www.youtube.com/watch?v=XXXXX
+                                p
+                                    i.fa.fa-vimeo-square
+                                    span &nbsp; Vimeo
+                                    em.small https://vimeo.com/XXXXX
                         .form-group
                             label(for="title") Title
                             input.form-control(type="text", name="title", id="title", placeholder="Title")
