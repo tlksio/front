@@ -2,7 +2,7 @@
     "vhost": "example.com",
     "port": 80,
     "twitterCallbackURL": "http://tlks.local/auth/twitter/callback",
-    "mongodb": "mongodb://xxxxx:xxxxxx@xxxxx.mongolab.com:43180/tlksio",
+    "mongodb": "mongodb://xxxxx:xxxxxx@xxxxx.mongolab.com:xxxxx/tlksio",
     "elasticsearch": "https://xxxxx:xxxxx@xxxxx.bonsai.io",
     "twitterConsumerKey": "xxxx",
     "twitterConsumerSecret": "xxxx"
