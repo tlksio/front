@@ -20,10 +20,10 @@
         .col-xs-6.favorites
             - if (user != null)
                 - if (talk.favorites.indexOf(user.id) != -1)
-                    .heart.unfavorite(data-id=talk.id)
+                    .heart.unfavorite(data-id=talk.id, data-count=talk.favoriteCount)
                         i.fa.fa-heart.red
                 - else
-                    .heart.favorite(data-id=talk.id)
+                    .heart.favorite(data-id=talk.id, data-count=talk.favoriteCount)
                         i.fa.fa-heart
             - else
                 .heart

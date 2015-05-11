@@ -33,8 +33,13 @@
                 context: this,
                 success: function(req) {
                     if (req.result === true) {
+                        var count = parseInt($(this).data('count'), 10);
+                        count += (cmd === 'favorite') ? +1 : -1;
                         $(this).toggleClass('favorite')
-                            .toggleClass('unfavorite');
+                            .toggleClass('unfavorite')
+                            .data('count', count)
+                            .find('span')
+                            .html(count + ' Favorites');
                     }
                 },
             });
