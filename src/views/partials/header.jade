@@ -37,11 +37,9 @@ nav.navbar.navbar-default
                                 a(href='/profile/' + user.username + '/settings') Settings
                             li
                                 a(href='/auth/logout') Logout
+                    li
+                        a(href='/talk/add', title="Add new talk")
+                            i.fa.fa-plus
                 else
                     li
                         a(href='/auth/login') Login
-                if user
-                    li
-                        a(href='/talk/add')
-                            i.fa.fa-bolt
-
