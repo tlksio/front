@@ -27,7 +27,10 @@ app.set('views', __dirname + '/src/views');
 
 // error handler
 app.use(function (err, req, res, next) {
-    if (err.code !== 'EBADCSRFTOKEN') return next(err);
+    'use strict';
+    if (err.code !== 'EBADCSRFTOKEN') {
+        return next(err);
+    }
 
     // handle CSRF token errors here
     res.status(403);
