@@ -33,14 +33,15 @@ html(lang="en")
                                 img.responsive.img-circle(src=""+talk.author.avatar, title="@"+talk.author.username, style="width: 32px")
                             span= " "
                             span.created= ""+moment(talk.created).format("MMMM Do YYYY, h:mm:ss a")
-                            div.voters
-                                h4(itemprop="voters")= "Voters"
-                                hr
-                                ul.list-inline
-                                    each voter in voters
-                                        li
-                                            a(href="/profile/"+voter.username)
-                                                img.responsive.img-circle(src=""+voter.avatar, title="@"+voter.username, style="width: 32px")
+                            if voters.length != 0
+                                div.voters
+                                    h4(itemprop="voters")= "Voters"
+                                    hr
+                                    ul.list-inline
+                                        each voter in voters
+                                            li
+                                                a(href="/profile/"+voter.username)
+                                                    img.responsive.img-circle(src=""+voter.avatar, title="@"+voter.username, style="width: 32px")
                     hr
                     .row
                         .col-xs-12
