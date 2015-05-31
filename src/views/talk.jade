@@ -45,7 +45,8 @@ html(lang="en")
                     hr
                     .row
                         .col-xs-12
-                            p(itemprop="articleBody")= talk.description
+                            p(itemprop="articleBody")
+                                | !{talk.description}
                     .row
                         .col-xs-10.tags
                             each tag in talk.tags
