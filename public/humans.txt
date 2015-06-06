@@ -1,0 +1,38 @@
+/* TEAM */
+    The odd guy: Raul Perez
+    Contact: repejota at gmail.com
+    Twitter: @repejota
+    From: Girona, Barcelona & London
+
+    The Andalusian: Jose Gil
+    Contact: josgilmo at gmail.com
+    Twitter: @josgilmo
+    From: Malaga & Barcelona
+
+    The Vasque: Gorka Lopez
+    Contact: glopezdetorre at gmail.com
+    Twitter: @glopezdetorre
+    From: Vitoria Gasteiz & Barcelona
+
+    The Valencian: Eric Pinto
+    Contact: ericpinto1985 at gmail.com
+    Twitter: @_dawnangel_
+    From: Castelló de la Plana & Barcelona
+
+    The Catalan: Issel Guberna
+    Contact: issel.guberna at gmail.com
+    Twitter: @octante
+    From: Igualada & Barcelona
+
+/* THANKS */
+
+    All our users!
+    From: Wherever you are
+
+
+/* SITE */
+    Last update: 2015/06/01
+    Standards: CSS3, HTML5
+    Components: Less, Jade
+    Software: node.js, Kittens & Caffeine
+
