@@ -1,13 +1,15 @@
 /*jshint unused:false*/
 var express = require('express');
 var session = require('express-session');
-var logger = require('express-logger');
+var morgan = require('morgan');
 var favicon = require('serve-favicon');
 var serveStatic = require('serve-static');
 var bodyParser = require('body-parser');
 var compress = require('compression');
 var vhost = require('vhost');
 var csrf = require('csurf');
+var fs = require('fs');
+var FileStreamRotator = require('file-stream-rotator');
 
 var config = require('./config.json');
 var routes = require('./lib/routes');
@@ -21,12 +23,26 @@ var rssRoutes = require('./lib/routes/rss.js');
 // express.js application
 var app = express();
 
+var logDirectory = __dirname + '/log';
+// ensure log directory exists
+fs.existsSync(logDirectory) || fs.mkdirSync(logDirectory);
+
+// create a rotating write stream
+var accessLogStream = FileStreamRotator.getStream({
+    filename: logDirectory + '/access-%DATE%.log',
+    frequency: 'daily',
+    verbose: false
+});
+
+// setup the logger
+app.use(morgan('combined', {stream: accessLogStream}));
+
 // use jade as a template engine
 app.set('view engine', 'jade');
 app.set('views', __dirname + '/src/views');
 
 // error handler
-app.use(function (err, req, res, next) {
+app.use(function(err, req, res, next) {
     'use strict';
     if (err.code !== 'EBADCSRFTOKEN') {
         return next(err);
@@ -39,11 +55,6 @@ app.use(function (err, req, res, next) {
 
 //  express.js router class
 var router = express.Router();
-
-// using a simple logger
-router.use(logger({
-    path: "./log/app.log"
-}));
 
 // add a favicon to the app
 var faviconPath = __dirname + '/public/img/favicon.png';
