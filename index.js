@@ -157,7 +157,7 @@ router.use(function(err, req, res, next) {
         message: err.message,
         error: err
     };
-    res.render(err.status, context);
+    res.render(err, context);
 });
 
 // which virtual hosts are we gonna use?
