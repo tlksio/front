@@ -6,4 +6,4 @@ before_install:
 install:
   - npm install
 notifications:
-  slack: tlksio:fNbJkMIvB9GZKDDjfjZqAzBb
+  slack: tlksio:QfkzsMZDJjbMs82MAsfopX0m
