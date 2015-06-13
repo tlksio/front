@@ -6,7 +6,6 @@ var favicon = require('serve-favicon');
 var serveStatic = require('serve-static');
 var bodyParser = require('body-parser');
 var compress = require('compression');
-var vhost = require('vhost');
 var csrf = require('csurf');
 var fs = require('fs');
 var FileStreamRotator = require('file-stream-rotator');
@@ -162,7 +161,7 @@ router.use(function(err, req, res, next) {
 });
 
 // which virtual hosts are we gonna use?
-// app.use(vhost("tlks.io", router));
+app.use("/", router);
 
 // start the HTTP server
 var server = app.listen(config.front.port, function() {
