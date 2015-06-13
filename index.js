@@ -29,7 +29,7 @@ fs.existsSync(logDirectory) || fs.mkdirSync(logDirectory);
 
 // create a rotating write stream
 var accessLogStream = FileStreamRotator.getStream({
-    filename: logDirectory + '/access-%DATE%.log',
+    filename: logDirectory + '/access.log',
     frequency: 'daily',
     verbose: false
 });
