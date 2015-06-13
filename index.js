@@ -142,7 +142,6 @@ router.get('/search', talkRoutes.search);
 // Default route
 router.get('*', function(req, res, next) {
     'use strict';
-
     var err = new Error();
     err.status = 404;
     next(err);
@@ -151,13 +150,12 @@ router.get('*', function(req, res, next) {
 // production error handler : no stacktraces leaked to user
 router.use(function(err, req, res, next) {
     'use strict';
-
-    res.status(err.status || 500);
+    var status = err.status || 500;
     var context = {
         message: err.message,
         error: err
     };
-    res.render(err, context);
+    res.render(status, context);
 });
 
 // which virtual hosts are we gonna use?
