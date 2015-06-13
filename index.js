@@ -29,9 +29,10 @@ fs.existsSync(logDirectory) || fs.mkdirSync(logDirectory);
 
 // create a rotating write stream
 var accessLogStream = FileStreamRotator.getStream({
-    filename: logDirectory + '/access.log',
+    filename: logDirectory + '/access.%DATE%.log',
     frequency: 'daily',
-    verbose: false
+    verbose: false,
+    date_format: "YYYY-MM-DD"
 });
 
 // setup the logger
@@ -161,10 +162,10 @@ router.use(function(err, req, res, next) {
 });
 
 // which virtual hosts are we gonna use?
-app.use(vhost(config.vhost, router));
+// app.use(vhost("tlks.io", router));
 
 // start the HTTP server
-var server = app.listen(config.port, function() {
+var server = app.listen(config.front.port, function() {
     "use strict";
     var host = server.address().address;
     var port = server.address().port;
