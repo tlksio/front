@@ -1,4 +1,5 @@
 /*jshint unused:false*/
+/*jshint camelcase:false*/
 var express = require('express');
 var session = require('express-session');
 var morgan = require('morgan');
