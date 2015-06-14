@@ -1,3 +1,4 @@
 {
-
+    "ids": false,
+    "box-model": false
 }

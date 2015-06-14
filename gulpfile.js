@@ -4,6 +4,7 @@ var jshint = require('gulp-jshint');
 var csslint = require('gulp-csslint');
 var minifyCSS = require('gulp-minify-css');
 var sourcemaps = require('gulp-sourcemaps');
+var coveralls = require('gulp-coveralls');
 var less = require('gulp-less');
 var phantom = require('gulp-phantom');
 var del = require('del');
@@ -86,6 +87,12 @@ gulp.task('phantom', function() {
     return gulp.src('./test/*.js')
         .pipe(phantom())
         .pipe(gulp.dest('./test'));
+});
+
+gulp.task('coveralls', function() {
+    "use strict";
+    gulp.src('./coverage/**/lcov.info')
+        .pipe(coveralls());
 });
 
 gulp.task('default', [

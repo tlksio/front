@@ -1,4 +1,5 @@
 /*jshint unused:false*/
+/*jshint camelcase:false*/
 var express = require('express');
 var session = require('express-session');
 var morgan = require('morgan');
@@ -6,10 +7,10 @@ var favicon = require('serve-favicon');
 var serveStatic = require('serve-static');
 var bodyParser = require('body-parser');
 var compress = require('compression');
-var vhost = require('vhost');
 var csrf = require('csurf');
 var fs = require('fs');
 var FileStreamRotator = require('file-stream-rotator');
+var cache = require('cache-middleware');
 
 var config = require('./config.json');
 var routes = require('./lib/routes');
@@ -29,13 +30,16 @@ fs.existsSync(logDirectory) || fs.mkdirSync(logDirectory);
 
 // create a rotating write stream
 var accessLogStream = FileStreamRotator.getStream({
-    filename: logDirectory + '/access-%DATE%.log',
+    filename: logDirectory + '/access.%DATE%.log',
     frequency: 'daily',
-    verbose: false
+    verbose: false,
+    date_format: "YYYY-MM-DD"
 });
 
 // setup the logger
-app.use(morgan('combined', {stream: accessLogStream}));
+app.use(morgan('combined', {
+    stream: accessLogStream
+}));
 
 // use jade as a template engine
 app.set('view engine', 'jade');
@@ -80,12 +84,14 @@ router.use(session({
     saveUninitialized: true
 }));
 
+// use gzip compression
+router.use(compress());
 
 // use CSRF protection middleware
 router.use(csrf());
 
-// use gzip compression
-router.use(compress());
+// Cache middleware
+router.use(cache());
 
 // routes
 router.get('/', routes.index);
@@ -140,9 +146,9 @@ router.get('/rss/tag/:tag', rssRoutes.tag);
 router.get('/search', talkRoutes.search);
 
 // Default route
+// Will cactch any route that does not match any rule.
 router.get('*', function(req, res, next) {
     'use strict';
-
     var err = new Error();
     err.status = 404;
     next(err);
@@ -151,20 +157,20 @@ router.get('*', function(req, res, next) {
 // production error handler : no stacktraces leaked to user
 router.use(function(err, req, res, next) {
     'use strict';
-
-    res.status(err.status || 500);
+    var status = err.status ||  500;
     var context = {
         message: err.message,
         error: err
     };
-    res.render(err, context);
+    console.log(err.stack);
+    res.render(status, context);
 });
 
 // which virtual hosts are we gonna use?
-app.use(vhost(config.vhost, router));
+app.use("/", router);
 
 // start the HTTP server
-var server = app.listen(config.port, function() {
+var server = app.listen(config.front.port, function() {
     "use strict";
     var host = server.address().address;
     var port = server.address().port;
