@@ -47,6 +47,10 @@ Please check the whole Project Documentation repo at:
 
 * Branch Develop : [![Build Status Develop](https://travis-ci.org/tlksio/front.svg?branch=develop)](https://travis-ci.org/tlksio/front)
 
+## Test coverage
+
+* [![Coverage Status](https://coveralls.io/repos/tlksio/front/badge.svg)](https://coveralls.io/r/tlksio/front)
+
 ## Bugs and feature requests
 
 Have a bug or a feature request? Please first read the
