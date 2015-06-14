@@ -9,6 +9,7 @@ var compress = require('compression');
 var csrf = require('csurf');
 var fs = require('fs');
 var FileStreamRotator = require('file-stream-rotator');
+var cache = require('cache-middleware');
 
 var config = require('./config.json');
 var routes = require('./lib/routes');
@@ -35,7 +36,9 @@ var accessLogStream = FileStreamRotator.getStream({
 });
 
 // setup the logger
-app.use(morgan('combined', {stream: accessLogStream}));
+app.use(morgan('combined', {
+    stream: accessLogStream
+}));
 
 // use jade as a template engine
 app.set('view engine', 'jade');
@@ -80,12 +83,14 @@ router.use(session({
     saveUninitialized: true
 }));
 
+// use gzip compression
+router.use(compress());
 
 // use CSRF protection middleware
 router.use(csrf());
 
-// use gzip compression
-router.use(compress());
+// Cache middleware
+router.use(cache());
 
 // routes
 router.get('/', routes.index);
@@ -140,6 +145,7 @@ router.get('/rss/tag/:tag', rssRoutes.tag);
 router.get('/search', talkRoutes.search);
 
 // Default route
+// Will cactch any route that does not match any rule.
 router.get('*', function(req, res, next) {
     'use strict';
     var err = new Error();
@@ -150,11 +156,12 @@ router.get('*', function(req, res, next) {
 // production error handler : no stacktraces leaked to user
 router.use(function(err, req, res, next) {
     'use strict';
-    var status = err.status || 500;
+    var status = err.status ||  500;
     var context = {
         message: err.message,
         error: err
     };
+    console.log(err.stack);
     res.render(status, context);
 });
 

@@ -48,6 +48,7 @@
     "file-stream-rotator": "0.0.6",
     "jade": "^1.10.0",
     "libtlks": "git://github.com/tlksio/libtlks#develop",
+    "cache-middleware": "git://github.com/tlksio/cache-middleware#develop",
     "moment": "^2.9.0",
     "mongodb": "^1.4.29",
     "morgan": "^1.5.3",
