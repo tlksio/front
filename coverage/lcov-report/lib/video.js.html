@@ -12,13 +12,13 @@
     </style>
 </head>
 <body>
-<div class="header low">
+<div class="header medium">
     <h1>Code coverage report for <span class="entity">lib/video.js</span></h1>
     <h2>
-        Statements: <span class="metric">11.11% <small>(2 / 18)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Branches: <span class="metric">0% <small>(0 / 15)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Functions: <span class="metric">0% <small>(0 / 1)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Lines: <span class="metric">11.11% <small>(2 / 18)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Statements: <span class="metric">70.59% <small>(12 / 17)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">46.67% <small>(7 / 15)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">100% <small>(1 / 1)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">70.59% <small>(12 / 17)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
     <div class="path"><a href="../index.html">All files</a> &#187; <a href="index.html">lib/</a> &#187; video.js</div>
@@ -64,8 +64,7 @@
 37
 38
 39
-40
-41</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
+40</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -78,7 +77,19 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -86,24 +97,11 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">var url = require('url');
 &nbsp;
@@ -116,41 +114,40 @@
  * @param string string URL to parse.
  * @return array [code, type] extracted from url.
  */
-exports.getCodeAndTypeFromRequest = <span class="fstat-no" title="function not covered" >function(uri) {</span>
+exports.getCodeAndTypeFromRequest = function(uri) {
     'use strict';
-<span class="cstat-no" title="statement not covered" >    var type</span>
-<span class="cstat-no" title="statement not covered" >    var code;</span>
-<span class="cstat-no" title="statement not covered" >    var domain = url.parse(uri).hostname || '';</span>
-<span class="cstat-no" title="statement not covered" >    var path = url.parse(uri).path || '';</span>
+    var type;
+    var code;
+    var domain = url.parse(uri).hostname || <span class="branch-1 cbranch-no" title="branch not covered" >'';</span>
+    var path = url.parse(uri).path || <span class="branch-1 cbranch-no" title="branch not covered" >'';</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    switch (domain) {</span>
+    switch (domain) {
         case 'www.youtube.com':
         case 'youtube.com':
         case 'youtu.be':
-<span class="cstat-no" title="statement not covered" >            type = "youtube";</span>
-<span class="cstat-no" title="statement not covered" >            code = path.match(/^\/(watch\?v=)?(([^/])+)($|\/)/i)[2] || '';</span>
-<span class="cstat-no" title="statement not covered" >            break;</span>
-        case 'vimeo.com':
+            type = "youtube";
+            code = path.match(/^\/(watch\?v=)?(([^/])+)($|\/)/i)[2] || <span class="branch-1 cbranch-no" title="branch not covered" >'';</span>
+            break;
+<span class="branch-3 cbranch-no" title="branch not covered" >        case 'vimeo.com':</span>
 <span class="cstat-no" title="statement not covered" >            type = "vimeo";</span>
 <span class="cstat-no" title="statement not covered" >            code = path.match(/^\/(\d+)(\/|$)/)[1] || '';</span>
 <span class="cstat-no" title="statement not covered" >            break;</span>
-        default:
+<span class="branch-4 cbranch-no" title="branch not covered" >        default:</span>
 <span class="cstat-no" title="statement not covered" >            throw new Error("Invalid URL");</span>
-<span class="cstat-no" title="statement not covered" >            break;</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (code === "") {</span>
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (code === "") {
 <span class="cstat-no" title="statement not covered" >        throw new Error("Invalid URL");</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    return [code, type];</span>
-}
+    return [code, type];
+};
 &nbsp;</pre></td></tr>
 </table></pre>
 
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Jun 15 2015 00:23:52 GMT+0200 (CEST)</div>
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Jun 21 2015 15:27:17 GMT+0200 (CEST)</div>
 </div>
 <script src="../prettify.js"></script>
 <script>

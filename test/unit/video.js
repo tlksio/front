@@ -43,7 +43,7 @@ describe('Video', function() {
         it('https://youtu.be/6DzSAaNQHR8', function(done) {
             var url = "https://youtu.be/6DzSAaNQHR8";
             var res = video.getCodeAndTypeFromRequest(url);
-            should.equal(res[0], "dQw4w9WgXcQ");
+            should.equal(res[0], "6DzSAaNQHR8");
             should.equal(res[1], "youtube");
             done();
         });
