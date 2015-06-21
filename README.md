@@ -49,7 +49,9 @@ Please check the whole Project Documentation repo at:
 
 ## Test coverage
 
-* [![Coverage Status](https://coveralls.io/repos/tlksio/front/badge.svg)](https://coveralls.io/r/tlksio/front)
+* [![Coverage Status](https://coveralls.io/repos/tlksio/front/badge.svg?branch=master)](https://coveralls.io/r/tlksio/front?branch=master)
+
+* [![Coverage Status](https://coveralls.io/repos/tlksio/front/badge.svg?branch=develop)](https://coveralls.io/r/tlksio/front?branch=develop)
 
 ## Bugs and feature requests
 
