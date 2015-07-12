@@ -91,7 +91,10 @@ router.use(compress());
 router.use(csrf());
 
 // Cache middleware
-router.use(cache());
+router.use(cache({
+    "path": '/opt/tlks.io/.cache',
+    "ttl": 3600000
+}));
 
 // routes
 router.get('/', routes.index);
