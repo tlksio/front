@@ -32,6 +32,6 @@ docker:
 	docker build -t front .
 
 docker-run:
-	docker run -ti --rm -v `pwd`:/opt/tlks.io/front -t front
+	docker run -ti --rm -p 80:9001 -v `pwd`:/opt/tlks.io/front -t front
 
 .PHONY: all clean dist-clean lint less test
