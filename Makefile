@@ -34,4 +34,4 @@ docker:
 docker-run:
 	docker run -ti --rm -p 80:9001 -v `pwd`:/opt/tlks.io/front -t front
 
-.PHONY: all clean dist-clean lint less test
+.PHONY: all clean dist-clean lint less uitest test cover install docker docker-run
