@@ -11,9 +11,8 @@ COPY ./package.json /install/package.json
 WORKDIR /install
 RUN npm install
 
-COPY . /opt/tlks.io/front
 WORKDIR /opt/tlks.io/front
 
 EXPOSE 9001
 
-CMD ["node", "index.js"]
+CMD ["bash"]
