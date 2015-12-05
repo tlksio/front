@@ -25,4 +25,10 @@ cover:
 	./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha test/unit -- -R spec
 	./node_modules/.bin/gulp coveralls
 
+docker:
+	docker build -t front .
+
+docker-run:
+	docker run -ti --rm -v `pwd`:/opt/tlks.io/front -t front
+
 .PHONY: all clean dist-clean lint less test

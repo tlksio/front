@@ -13,6 +13,7 @@ gulp.task('dist-clean', ['clean'], function() {
     'use strict';
 
     del([
+        'config.json',
         'node_modules',
         'coverage',
         'public/components'
