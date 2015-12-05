@@ -25,6 +25,9 @@ cover:
 	./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha test/unit -- -R spec
 	./node_modules/.bin/gulp coveralls
 
+install:
+	npm install
+
 docker:
 	docker build -t front .
 
