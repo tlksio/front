@@ -32,7 +32,7 @@ docker:
 	docker build -t tlksio/front .
 
 docker-run:
-	docker run -ti --rm -p 9001:9001 -v `pwd`:/opt/tlks.io/front --link db:db -t tlksio/front bash
+	docker run -ti --name front --rm -p 9001:9001 -v `pwd`:/opt/tlks.io/front --link db:db -t tlksio/front bash
 
 docker-up:
 	docker run -d --name front -p 9001:9001 -v `pwd`:/opt/tlks.io/front --link db:db -t tlksio/front
