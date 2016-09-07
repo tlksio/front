@@ -29,9 +29,12 @@ install:
 	npm install
 
 docker:
-	docker build -t docker_front .
+	docker build -t tlksio/front .
 
 docker-run:
-	docker run -ti --rm -p 80:9001 -v `pwd`:/opt/tlks.io/front -t docker_front
+	docker run -ti --rm -p 9001:9001 -v `pwd`:/opt/tlks.io/front --link db:db -t tlksio/front bash
+
+docker-up:
+	docker run -d --name front -p 9001:9001 -v `pwd`:/opt/tlks.io/front --link db:db -t tlksio/front
 
 .PHONY: all clean dist-clean lint less uitest test cover install docker docker-run

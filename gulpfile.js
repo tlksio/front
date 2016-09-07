@@ -101,5 +101,4 @@ gulp.task('default', [
     'jshint',
     'less',
     'csslint',
-    'minify-css'
 ], function() {});

@@ -177,5 +177,8 @@ var server = app.listen(config.front.port, function() {
     "use strict";
     var host = server.address().address;
     var port = server.address().port;
-    console.log('tlks.io front listening at http://%s:%s', host, port);
+    console.log('tlks.io front listening at http://%s:%s, serving from %s',
+      host,
+      port,
+      __dirname);
 });
