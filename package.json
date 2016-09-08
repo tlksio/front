@@ -54,7 +54,7 @@
     "moment": "^2.9.0",
     "mongodb": "^2.1.*",
     "morgan": "^1.5.3",
-    "nodemon": "^1.8.1",
+    "nodemon": "^1.10.2",
     "oauth": "^0.9.12",
     "request": "^2.53.0",
     "serve-favicon": "^2.2.0",
